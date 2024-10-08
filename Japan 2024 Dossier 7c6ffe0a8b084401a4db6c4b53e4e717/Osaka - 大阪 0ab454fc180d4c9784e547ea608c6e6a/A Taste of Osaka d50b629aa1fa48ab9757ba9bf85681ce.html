@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>A Taste of Osaka</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d50b629a-a1fa-48ab-9757-ba9bf85681ce" class="page sans"><header><h1 class="page-title">A Taste of Osaka</h1><p class="page-description"></p></header><div class="page-body"><hr id="1055a4d0-0333-8032-922b-cd8963c28f27"/><figure id="b4f38ccb-1288-4441-b11f-7f138f67db87" class="image"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image.png"><img style="width:707.9947509765625px" src="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image.png"/></a></figure><hr id="1055a4d0-0333-806b-a168-c352e2ceb030"/><p id="2d279bd2-3533-459f-8b8b-efc9afc20dde" class="">Osaka’s incredible cuisine is like a blend of magic and science, where traditional Japanese flavors collide with influences from different regions and cultures. Its food scene has everything from savory to sweet, spicy to umami. It’s a playground for adventurous taste buds.</p><hr id="1055a4d0-0333-8064-8767-e64e5c68edc3"/><figure id="51386311-2a5c-47d4-8954-65eb5e5273e7" class="image"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image%201.png"><img style="width:707.9947509765625px" src="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image%201.png"/></a></figure><hr id="1055a4d0-0333-80b4-bfa9-f0a4452e3ee4"/><p id="1457a4b0-8fbd-4471-a014-bc34e7aeaf52" class="">But what makes it so good? It’s all about the umami—the superstar of flavors! Osaka’s chefs have mastered the art of capturing umami, that savory and lip-smacking sensation that keeps you coming back for more.<br/>They know the secret ingredients—bonito flakes, dashi broth, and fermented seasonings like soy sauce and miso—that elevate every dish to new heights of deliciousness. It’s like a symphony of flavors exploding in your mouth with each bite. Prepare to have your taste buds awakened!<br/></p><hr id="1055a4d0-0333-8023-8108-ee7b5ac780ea"/><figure id="019ce60e-6fa6-4fb1-8fa8-d1357ea2ef8f" class="image"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image%202.png"><img style="width:707.9947509765625px" src="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image%202.png"/></a></figure><hr id="1055a4d0-0333-80d6-bcbf-c0d436e131cc"/><p id="3a27a4c8-2a29-4bfc-98f9-5bf3df00b1ed" class="">There’s no better way to understand why Osaka’s food is so delicious than by embarking on a flavor-filled journey through the vibrant streets and rich history of Osaka’s culinary scene. In this city, the past merges seamlessly with the present, creating a compelling fusion of traditional flavors and innovative twists that will leave you craving more. As you explore Osaka’s food culture, you’ll discover how centuries of cultural exchange have shaped its distinct culinary identity. Influences from Chinese and Korean cuisines have left an indelible mark, resulting in a unique blend of flavors that tickle the taste buds. Each bite tells a story of the city’s historical connections and its relentless pursuit of culinary excellence.</p><hr id="1055a4d0-0333-805d-880b-e06e21069f57"/><figure id="031411e0-c485-4324-9d01-ed2b4d40112b" class="image"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image%203.png"><img style="width:707.9947509765625px" src="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image%203.png"/></a></figure><hr id="1055a4d0-0333-8094-b8eb-fa97f96f0449"/><p id="8f0b1238-6a20-40c5-9c0d-bc56dcf91b11" class="">Stroll through the lively streets of Osaka, and an array of street food delights greet you. From the iconic takoyaki—those delectable octopus-filled balls of joy—to the savory yakisoba and crispy kushikatsu skewers, the city’s street food scene is a feast for the senses. The tantalizing aromas and vibrant atmosphere invite you to indulge in the diverse flavors that define Osaka’s culinary landscape.</p><hr id="1055a4d0-0333-8075-86bf-d7fb39e7d8f3"/><figure id="aefc59b2-7c60-453c-9687-62a9540705f8" class="image"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image%204.png"><img style="width:707.9947509765625px" src="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image%204.png"/></a></figure><hr id="fadccec4-c13f-4273-a767-66d2b2da3c73"/><p id="269d28f7-0966-4662-9e8e-3f6b42dddc2c" class="">Don’t forget to venture into Osaka’s neighborhoods, each with culinary character. Dotonbori, with its neon lights and bustling energy, beckons street food enthusiasts, offering local favorites like takoyaki and okonomiyaki. </p><hr id="1055a4d0-0333-80ef-b403-fa62db407941"/><figure id="0ac280bc-58ff-4981-916d-6853b61da95e" class="image"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image%205.png"><img style="width:707.9947509765625px" src="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/image%205.png"/></a></figure><hr id="1055a4d0-0333-8076-8aa7-cc33449e0046"/><p id="fff5a4d0-0333-806a-a93a-f606ee4ae985" class="">The Kita-Shinchi district, on the other hand, invites you to indulge in refined dining experiences. It features upscale restaurants showcasing exquisite kaiseki meals that embody the artistry of Japanese cuisine. Each neighborhood tells a unique story, inviting you to explore and savor Osaka’s diverse flavors.</p><p id="4c9294a8-ea0b-4434-b789-68f9263c51e3" class="">
+</p><p id="f78a48bf-51e7-4220-9957-4ea4cb7e7f9c" class="">While Osaka cherishes its culinary traditions, it also embraces innovation. Tradition and modernity coexist, resulting in a dynamic culinary scene that features traditional techniques with contemporary twists. Talented chefs push the boundaries of creativity, experimenting with new ingredients, flavors, and presentation styles. The result? A culinary landscape combining the best of tradition and innovation ensures that every dining experience in Osaka is a delightfully unexpected adventure.</p><hr id="f733f225-5f98-4131-88e5-b63416104577"/><figure id="fe3f81da-756d-4aa9-b36e-bf6aae962ff1" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Takoyaki%20-%20%E3%81%9F%E3%81%93%E7%84%BC%E3%81%8D%20fe3f81da756d4aa9b36ebf6aae962ff1.html">Takoyaki - たこ焼き</a></figure><figure id="d7755d42-4465-4efa-bbf3-a98622e1e691" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Akashiyaki%20-%20%E6%98%8E%E7%9F%B3%E7%84%BC%E3%81%8D%20d7755d4244654efabbf3a98622e1e691.html">Akashiyaki - 明石焼き</a></figure><figure id="7b535ef6-84a5-40f5-8c44-b287fcb0e53a" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Okonomiyaki%20-%20%E3%81%8A%E5%A5%BD%E3%81%BF%E7%84%BC%E3%81%8D%207b535ef684a540f58c44b287fcb0e53a.html">Okonomiyaki - お好み焼き</a></figure><figure id="60b593f3-e1ae-4088-a963-c2c10f4a0853" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Kushi%20Katsu%20-%20%E4%B8%B2%E3%82%AB%E3%83%84%2060b593f3e1ae4088a963c2c10f4a0853.html">Kushi Katsu - 串カツ</a></figure><figure id="7cf38db5-9f4a-427f-b83d-8730e4769075" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Osaka-Style%20Ramen%207cf38db59f4a427fb83d8730e4769075.html">Osaka-Style Ramen</a></figure><figure id="d7ffb655-c978-480c-b7d9-65092965ed90" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Negiyaki%20-%20%E3%81%AD%E3%81%8D%E3%82%99%E7%84%BC%E3%81%8D%20d7ffb655c978480cb7d965092965ed90.html">Negiyaki - ねぎ焼き</a></figure><figure id="a51e5d8d-22f3-4def-9c09-18f9d2ad0aca" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Tecchiri%20-%20%E3%81%A6%E3%81%A3%E3%81%A1%E3%82%8A%20a51e5d8d22f34def9c0918f9d2ad0aca.html">Tecchiri - てっちり</a></figure><figure id="9bf39068-a8ab-469d-9f60-867c84de673e" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Taiko%20Manju%20-%20%E5%A4%AA%E9%BC%93%E9%A5%85%E9%A0%AD%209bf39068a8ab469d9f60867c84de673e.html">Taiko Manju - 太鼓饅頭</a></figure><figure id="ac54789d-58a5-479b-a829-2a38df113105" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Kitsune%20Udon%20-%20%E3%81%8D%E3%81%A4%E3%81%AD%E3%81%86%E3%81%A8%E3%82%99%E3%82%93%20ac54789d58a5479ba8292a38df113105.html">Kitsune Udon - きつねうどん</a></figure><figure id="7690b35b-6e7d-4e71-b9ef-5a4411141ff8" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Hakozushi%20-%20%E7%AE%B1%E5%AF%BF%E5%8F%B8%207690b35b6e7d4e71b9ef5a4411141ff8.html">Hakozushi - 箱寿司</a></figure><figure id="c3ac3acb-e7fc-418d-bfda-d94db1986f33" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Rikuro%20Ojisan%E2%80%99s%20Cheesecake%20-%20%E3%82%8A%E3%81%8F%E3%82%8D%E2%80%95%E3%81%8A%E3%81%97%E3%82%99%E3%81%95%E3%82%93%E3%81%AE%E3%83%81%E3%83%BC%E3%82%B9%E3%82%99%E3%82%B1%E3%83%BC%E3%82%AD%20c3ac3acbe7fc418dbfdad94db1986f33.html">Rikuro Ojisan’s Cheesecake - りくろ―おじさんのチーズケーキ</a></figure><figure id="6e7381ca-54ae-4f20-a0cc-42bf2c18cd51" class="link-to-page"><a href="A%20Taste%20of%20Osaka%20d50b629aa1fa48ab9757ba9bf85681ce/Kappo%20Cuisine%206e7381ca54ae4f20a0cc42bf2c18cd51.html">Kappo Cuisine</a></figure><hr id="1055a4d0-0333-80b1-a2fc-d2df4b1d7369"/><p id="e849a754-e541-4562-b428-f7fbecc749e3" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

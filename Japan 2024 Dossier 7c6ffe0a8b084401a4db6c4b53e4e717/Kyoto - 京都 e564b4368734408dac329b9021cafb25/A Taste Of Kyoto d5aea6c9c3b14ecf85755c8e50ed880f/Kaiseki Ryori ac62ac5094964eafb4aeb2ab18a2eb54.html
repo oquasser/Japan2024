@@ -1,0 +1,702 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Kaiseki Ryori</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ac62ac50-9496-4eaf-b4ae-b2ab18a2eb54" class="page sans"><header><h1 class="page-title">Kaiseki Ryori</h1><p class="page-description"></p></header><div class="page-body"><hr id="68760c00-5856-46df-b153-db41ec116a3d"/><p id="ed1fc8ed-1d56-4ad5-9b41-4a030b66c3c8" class="">Kaiseki is one of the world’s most refined cuisines. For a serious foodie, no trip to Japan would be complete without at least one proper kaiseki meal. Kaiseki ryori has its origin in the tea ceremony, but later evolved into an elaborate dining style popular among aristocratic circles. Kyoto-style kaiseki ryori (kyo kaiseki) is particularly refined, placing an emphasis on subtle flavors and local, seasonal ingredients. A kaiseki meal has a prescribed order of courses which is determined by the cooking method of each dish.</p><hr id="1055a4d0-0333-803e-9ce2-cb51f8d1ba68"/><figure id="f4b319b6-9f53-453c-afbd-c82dc0af73ba" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image.png"/></a></figure><h2 id="fff5a4d0-0333-8045-83cb-e09cbfd64032" class="">Introduction to Kaiseki</h2><p id="ad49a538-c3aa-4d9b-bf69-68a03ec98606" class="">Kaiseki is said to date back to the 16th century, when tea master Sen-no-Rikyu introduced an austere version of the cuisine to accompany the tea ceremony. In practice, modern kaiseki is actually a style of cooking and food presentation that evolved over the last few centuries, bringing together a wide variety of high-end cooking techniques, presentation methods and ingredients. The best description of kaiseki is simply “Japanese haute cuisine,” that is, elegant food eaten on special occasions.</p><p id="9ceafb79-d04f-4c35-8b69-e73141ebedf6" class="">
+</p><figure id="f4796db5-44a5-4472-903c-68d8aee3a80e" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%201.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%201.png"/></a></figure><p id="9a6a46d8-4bcb-4b1b-921d-f4959d2445fb" class="">
+</p><p id="2e41ece1-245c-41a7-8ba9-08227282b081" class="">The most important thing to note about kaiseki is that the food is only one part of the experience. In this regard, kaiseki is like the tea ceremony, in which tea is only one element of an all-encompassing aesthetic experience. In kaiseki, first and foremost, dishes are chosen to reflect the season: ingredients are always “shun-no-mono,” or the freshest and best the market has to offer. And each course is served on carefully chosen tableware like lacquerware trays and priceless ceramic bowls. Finally, tremendous thought goes into how each dish is presented, so that every course resembles an edible work of art.</p><p id="6a1cf935-1eea-4cbb-aee7-8abc967bb265" class="">
+</p><figure id="55ce4084-d247-4ac8-8c0a-16414bf4a647" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%202.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%202.png"/></a></figure><p id="fff5a4d0-0333-80dc-84d4-d37bf3769ca8" class="">
+</p><p id="75a0e1df-be36-4c55-a7a2-881c6f0d0038" class="">And, the aesthetic concerns don’t end at the table: the room in which the meal is served is equally important. Good kaiseki is almost always served in a traditional restaurant decorated in a refined and simple manner. The flowers and scroll in the tokonoma (sacred alcove of the room) will be carefully chosen to reflect the season. And, ideally, one side of the room will have a sliding glass door allowing a view over a perfect little tsubo-niwa (Japanese pocket garden).</p><p id="4e7ff3a1-1a2d-407a-ae44-29f14a510f84" class="">
+</p><figure id="fff5a4d0-0333-8002-afa8-f6941d9785e2" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%203.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%203.png"/></a></figure><p id="29969076-db94-455f-829d-caf396eaa789" class="">
+</p><p id="05a0bf75-1e63-4086-b70f-8bc8f91e3497" class="">As with all things Japanese, there is always layer upon layer of meaning. Certain foods might actually serve as culinary puns or references to obscure classical works of poetry or history. Of course, most of this will be lost on the average foreign diner. But, don’t feel too bad about that: they’ll also go flying over the heads of all but the most educated Japanese diners.</p><p id="ccd3dc22-0d28-40ec-87e0-a6b7bce8df05" class="">Since kaiseki is a traditional style of Japanese cuisine, you’ll find lots of seafood and shellfish, plenty of vegetables, and the all-important rice, usually served with miso soup and tsukemono (Japanese pickles) at the end of the meal. And, of course, the drink of choice is sake, but you can also ask for beer or oolong tea.</p><p id="7ea8b371-0949-4f47-adf1-2c1d961cf86b" class="">
+</p><figure id="8912382b-001d-497e-b8bb-51eeccf620fe" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%204.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%204.png"/></a></figure><hr id="1055a4d0-0333-806a-8c74-f9a0f1de1211"/><h2 id="b66200bb-ea96-4861-968f-b72e703330d9" class="">The Courses of Kaiseki</h2><p id="b15915c7-6f31-43fb-a173-abe4384a786c" class="">A full-course kaiseki dinner will consist of anywhere from 7 to 14 courses, usually served in a strictly prescribed order. The names of each course might differ from place to place, but here’s a pretty typical course from the Tawaraya Ryokan in Kyoto. Occasionally, some of the courses will be served together on the same tray, rather than one at a time, which is common at stand-alone restaurants.</p><h3 id="ec2d6e2f-e3bb-46e0-a517-beeaffcc3fc9" class="">Shokuzen-shu (aperitif)</h3><p id="13757a36-b81f-4100-9a99-bc49021207b3" class="">The meal will often start with a small glass of liqueur, often ume-shu (plum wine) or similar.</p><p id="89734e72-6df5-4f12-926f-ad9a7ccd015a" class="">
+</p><figure id="3e80ba48-9231-404d-8fe3-c123028b8ed6" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%205.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%205.png"/></a></figure><hr id="1055a4d0-0333-803f-a9a4-fcea22b73f9d"/><h3 id="fff5a4d0-0333-80dd-a6e4-c9f2ac94ee8c" class="">Saki-zuke (starter)</h3><p id="ad04b5e6-f111-42de-8fd1-e7e715c076d6" class="">The next course is the saki-zuke, which serves as an amuse-bouche to stimulate the appetite. Pictured below: shrimp and ebi-imo (a type of Japanese potato).</p><p id="435fc166-c5f4-4bb3-b939-ac98a79607f5" class="">
+</p><figure id="35c3d06b-58b0-408b-95d7-6b0266581675" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%206.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%206.png"/></a></figure><hr id="1055a4d0-0333-80e6-99b9-eb8c8207e7fe"/><h3 id="bbf1a23a-9276-4dfa-a441-bf5408a6532c" class="">Ko-suimono (small soup course)</h3><p id="b3c2398e-334c-4ec0-8a44-9c6eebb40d90" class="">The next course will be ko-suimono or just suimono. This is a soup course. Pictured below: pureed lotus root with roasted pine nuts.</p><p id="ba677a92-e84c-4d8f-ba65-3a3dc6acb43f" class="">
+</p><figure id="b965cb8c-2039-46ce-9639-c16f9fbe6670" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%207.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%207.png"/></a></figure><hr id="192a3c36-7162-49f2-b447-f154e3c1f9c1"/><h3 id="f3a6851c-397c-490d-9112-bc7af4972bf0" class="">Muko-zuke (sashimi course)</h3><p id="b3d2a390-5e5a-4e81-9b3c-5090616ea470" class="">The next course will be muko-zuke, or the sashimi course. Pictured below: kue (long-tailed grouper) and fugu (puffer fish).</p><p id="a5ee1dec-b1d5-4fb8-98e8-8895cf477046" class="">
+</p><figure id="b17c10f7-3083-45b7-a0f4-0d8867d4e3ec" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%208.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%208.png"/></a></figure><hr id="1055a4d0-0333-802f-8b7d-c4ce808a6682"/><h3 id="31a22ff7-a1d0-4dfb-9e35-213f84161dd7" class="">Mushi-mono (steamed food course)</h3><p id="a9091778-64d4-4f71-bbe9-53947187ac85" class="">After sashimi, you’ll be served a mushi-mono, or steamed dish. Pictured below: conger eel, clams, yuba, shimeji mushroom, mitsuba (Japanese parsley) steam-boiled in an earthenware teapot. On the side: a type of Japanese citrus called sudachi.</p><p id="bd2a8d8a-95c5-465e-85a7-d535c1dfc53b" class="">
+</p><figure id="0d8910f0-7637-41de-8656-6b018912724e" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%209.png"><img style="width:705px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%209.png"/></a></figure><hr id="1055a4d0-0333-8061-b173-ce5b36a12e54"/><h3 id="bcb36396-d23b-481b-befa-46c2c93b4d51" class="">Yaki-mono (grilled fish course)</h3><p id="3e4ad04c-6123-45a8-8bd8-f9dfc45b5e4f" class="">The next course, yaki-mono, is the grilled fish course. At Tawaraya, this included ayu (sweetfish), nameko mushroom, conger eel, citrus-grilled shrimp, and roasted ginko nuts (pictured below).</p><p id="40212364-bdd1-4143-8dc4-4f83523914d2" class="">
+</p><figure id="8150e4b8-a7e6-4443-a23a-d01e76bf39da" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2010.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2010.png"/></a></figure><hr id="1055a4d0-0333-8040-8150-f236214c00d1"/><h3 id="9780a1f5-2e78-46e4-b61e-4b4fa4439d99" class="">Atsu-mono (hot dish)</h3><p id="2bd78b87-b8d7-485b-8755-a27be02e46cb" class="">The next course is atsu-mono (literally, hot dish). Pictured below: simmered duck meat and small turnips. This is often the “main course” of a kaiseki meal.</p><p id="d8adfceb-9f76-4fee-a57d-d37f3f50ab32" class="">
+</p><figure id="9461fdee-1ddd-4468-9337-4841696c739e" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2011.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2011.png"/></a></figure><hr id="1055a4d0-0333-8057-9607-d0e9796c96cc"/><h3 id="a08d9195-fda9-4eb3-9a42-a8b44c17975f" class="">Shii-zakana (side dish)</h3><p id="d1b1de63-7b83-41d0-bad8-ab41aa71dba4" class="">The next course is called shii-zakana, which is a side dish. Pictured below: shijimi clams served with yuba, myoga and sesame seeds.</p><p id="d6676324-7534-4877-8083-0aba5f17c283" class="">
+</p><figure id="e344543a-4279-4f72-ba00-ceb4d5cffea7" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2012.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2012.png"/></a></figure><hr id="eb9ef431-ad33-4997-acc8-10f74f7d8bb8"/><h3 id="420971d8-1875-4333-8126-c542f65d3ae5" class="">Gohan (rice)</h3><p id="5acb4889-c6d4-4533-9339-f8a478b83953" class="">The next course is gohan (the Japanese word for rice). To the Japanese, a meal is not a meal unless it includes rice. And (pictured below), rice is always served with miso soup, a high-end miso called aka-dashi) and some tsukemono (Japanese pickles). </p><p id="3cbb0748-f209-4901-8ab3-5f91404e38b6" class="">
+</p><figure id="4d029fa0-9555-4ee1-86fc-5c7bdda0dc92" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2013.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2013.png"/></a></figure><hr id="1055a4d0-0333-80b4-9f6c-cf488e637ca3"/><h3 id="e19b2ef3-3ae1-449f-8471-7dbea6391535" class="">Mizu-mono (dessert)</h3><p id="72d86e49-d626-4c01-98b7-6a6eda7f7f5f" class="">The final course is mizu-mono (literally, water thing). The word water is used because the dessert is often fruit. Pictured below: pear compote with blueberry sauce.</p><p id="b7d002c9-aba2-4423-a046-32430a3a2949" class="">
+</p><figure id="22300c01-9b03-411d-beda-be62c963aa7a" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2014.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2014.png"/></a></figure><hr id="1055a4d0-0333-8016-b2ea-ec62c0dc76f2"/><h2 id="909ea7ae-b819-4995-9137-787e0694fc21" class="">How Much Does Kaiseki Cost?</h2><p id="d66c7dda-8fe6-427f-81ae-f2ff82e9fda4" class="">A full-course kaiseki dinner at a good Kyoto kaiseki restaurant will cost between Y10,000 and Y30,000 per person without drinks. There are some cheaper places, but you generally get what you pay for.</p><hr id="9027efe4-71a1-4304-a8c7-1c369fe14198"/><h2 id="fa403157-faaa-4076-9e63-84adf55a78f0" class="">How to Reserve a Kaiseki Restaurant</h2><p id="a690481b-a438-4176-b205-75e246661328" class="">Unsurprisingly, you can’t just walk into a kaiseki restaurant and expect to be served, especially at dinner. So, here’s what you do: Get the concierge at your hotel or ryokan to call ahead and make the booking for you.</p><hr id="8197db94-355c-4349-8c92-a323a20c267d"/><h2 id="91413634-16e0-4635-800c-b587fcae8e1c" class="">How to Dress For Kaiseki</h2><p id="1e94b7f2-7c8c-46c1-b44c-1ee7d2b881f4" class="">Needless to say, kaiseki is not the kind of meal you’d want to eat wearing shorts and flip-flops. But, you’d don’t have to dress formally either. Smart casual will be perfectly fine. But, please wear decent socks. You’ll almost certainly have to remove your shoes when you enter the restaurant, and nothing looks worse than a couple of hairy toes protruding from an old pair of socks.</p><hr id="1055a4d0-0333-809e-b1f7-d68fda160649"/><h2 id="395b406d-901a-4db2-913d-5446aa2b1de6" class="">Kaiseki on the Cheap</h2><p id="22190cb2-9bb6-41bd-9d04-cbe1e6806903" class="">One good way to sample kaiseki without breaking the bank is to go at lunch, when some restaurants serve a variety of their classic dishes in an elegant lacquerware bento box for as little as Y3,000 per person.</p><p id="52899265-bb27-4eb6-b2c2-03821d8037ff" class="">
+</p><figure id="74136df4-5a2f-41b9-957a-89af722ffb33" class="image"><a href="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2015.png"><img style="width:707.9947509765625px" src="Kaiseki%20Ryori%20ac62ac5094964eafb4aeb2ab18a2eb54/image%2015.png"/></a></figure><hr id="1055a4d0-0333-8015-9f12-ea85d50703ff"/><h2 id="e21dbe8e-c581-466f-9b11-188c1ecb345c" class="">Kyoto’s Best Kaiseki Restaurants</h2><ul id="95f6e514-a4d0-480b-af10-158f089b8074" class="bulleted-list"><li style="list-style-type:disc"><strong>Kitcho Arashiyama Honten</strong>: Kitcho Arashiyama is considered by many in Japan to be the best kaiseki restaurant in the country.</li></ul><ul id="24570300-84c2-4093-be73-444005d7245c" class="bulleted-list"><li style="list-style-type:disc"><strong>Kikunoi</strong>: This three-star Michelin restaurant has a beautiful location just around the corner from Maruyama-koen Park, so it’s very convenient. And, the food is awesome.</li></ul><ul id="6b162827-44a1-4e78-a4fd-8d1ffe6dc51d" class="bulleted-list"><li style="list-style-type:disc"><strong>Kikunoi Roan</strong>: The sister restaurant of the above place, this is more approachable and more reasonable, and the food is still superb.</li></ul><ul id="2177f22b-a2de-45ab-ab8b-2fd671c49ed1" class="bulleted-list"><li style="list-style-type:disc"><strong>Guilo Guilo Hitoshina</strong>: Located downtown, along a picturesque canal, Guilo Guilo Hitoshina offers a delicious, modern take on kaiseki cuisine at affordable prices.</li></ul><ul id="fff5a4d0-0333-80ff-a3b9-ca1f56a3bb1a" class="bulleted-list"><li style="list-style-type:disc"><strong>Gion Owatari</strong>: 2-star kaiseki restaurant Gion Owatari is a favourite with Japanese gourmands, and no wonder – the cooking here is at once soulful and impeccable.</li></ul><ul id="cd5f5537-1617-4e19-874b-88cce12fd5c1" class="bulleted-list"><li style="list-style-type:disc"><strong>Kiyamachi Sakuragawa</strong>: Kiyamachi Sakuragawa is an approachable and superb spot to enter the world of kaiseki cuisine.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

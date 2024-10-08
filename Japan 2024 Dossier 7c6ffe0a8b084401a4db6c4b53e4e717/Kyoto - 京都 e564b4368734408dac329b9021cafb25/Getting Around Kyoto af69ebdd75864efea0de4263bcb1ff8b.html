@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Getting Around Kyoto</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="af69ebdd-7586-4efe-a0de-4263bcb1ff8b" class="page sans"><header><h1 class="page-title">Getting Around Kyoto</h1><p class="page-description"></p></header><div class="page-body"><hr id="1045a4d0-0333-80d7-82d7-f0d01f25772f"/><p id="77730a92-d68c-42be-9683-cbad3af161fd" class="">Kyoto, like most major cities in Japan, has a world class public transport system - there are tons of options for trains, buses, subways, and taxis to get you wherever you want to go.  Also, because Kyoto is relatively flat, it’s a great city for cycling or walking between destinations.</p><hr id="1045a4d0-0333-803e-9e56-e5d0c9edc841"/><h1 id="986f68d3-4167-42fd-bf43-0f633aad09c2" class="">Trains</h1><p id="1cb010b9-61b5-416c-8509-94e9fb4fad54" class="">Kyoto is served by six train lines, which can all be used for getting around the city.  The train system here consists of the national JR Line and several local, private lines.  Unlike Tokyo, trains are not always the most convenient way to explore within Kyoto (buses and subways are more convenient), though you can get to a few places in Kyoto by train, like Arashiyama, Uji, and Tofuku-ji.</p><h3 id="552a53a5-94f0-43e1-9aef-a0dbe1fd60c2" class="">JR Lines</h3><ul id="860a5ee5-fe4b-4997-a84d-dd01541efd72" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">JR Tokaido Shinkansen Line</span> - connects with Tokyo &amp; Osaka via Bullet Train</li></ul><ul id="ba738105-78b3-40ad-a0fe-27501e90a590" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">JR Tokaido Main Line</span> - connects with Osaka, Kobe, and Otsu</li></ul><ul id="1c297ba1-d16f-49cf-97ae-58e3bb89f7ec" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">JR Nara Line</span> - connects Kyoto Station with Nara in about 45 min (though there express train options on this line that are faster and more comfortable as well)</li></ul><ul id="0aa352c8-c9a8-4461-8a21-85980b54616d" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">JR Sagano-San’in Line</span> - connects Kyoto Station with Arashiyama (Saga-Arashiyama Station)</li></ul><ul id="56593503-d505-4b64-9e7d-a7f30f953568" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">JR Hokuriku Line</span> - connects Kyoto Station with destinations northeast of Kyoto, like Kanazawa and Toyama</li></ul><h3 id="09a88852-9ffd-4127-adb0-6157d0f755e6" class="">Keihan Line</h3><p id="82a053a0-f48f-4c61-8a3d-c8ad365ac564" class="">Runs from Demachiyanagi Station in the north of Kyoto all the way to downtown Osaka.  In Kyoto, it stops at Marutamachi, Sanjo, Gion-Shijo, Kiyomizu-Gojo, Shichijo, Tofuku-ji and Inari stations. If you find yourself near the Kamo-gawa River, it’s a very convenient way to move north and south in the city.</p><h3 id="3749a376-7190-4a76-b97b-764a6f8f2764" class="">Kintetsu Line</h3><p id="b09f45f1-ddbb-4869-83fc-e275345af269" class="">Connects Kyoto with Osaka, Nara, and Nagoya.  </p><h3 id="6a91e4b4-bedb-4f3f-bd6b-e607452f9281" class="">Keifuku Line</h3><p id="37fa8171-b330-42be-af27-c13691480017" class="">A street tram that starts at Omiya Station, a bit west of downtown, and runs west to Arashiyama and Kitano-Hakubaicho.</p><h3 id="f475c204-df09-4194-8caf-46aa0359d097" class="">Eizan Line</h3><p id="289b701c-b8e7-4fce-b3cb-b93e41b2ca81" class="">Runs from Demachiyanagi Station to the villages of Kibune and Kurama in the Kitayama Mountains in the north of the city.  This is the best line to take to get to either of those destinations.</p><p id="e59313d5-d5e3-4f28-81dc-4a68de3e71c4" class="">
+</p><figure id="3a5f83e6-f1b5-4897-bafd-2865977a15ea" class="image"><a href="Getting%20Around%20Kyoto%20af69ebdd75864efea0de4263bcb1ff8b/image.png"><img style="width:707.9947509765625px" src="Getting%20Around%20Kyoto%20af69ebdd75864efea0de4263bcb1ff8b/image.png"/></a></figure><hr id="1045a4d0-0333-80c3-a204-ebad32ee8fe3"/><h1 id="64c60008-704d-46bb-950f-fae9eb875ebf" class="">Subways</h1><p id="278f72f3-2601-43a1-9bbe-f6f5221e6c52" class="">Subways are the best way to move quickly around Kyoto, but unfortunately, there are only two subway lines: The north-south Karasuma Line and the east-west Tozai Line.  These two lines intersect in the middle of Kyoto, allowing you to transfer lines.  </p><h3 id="a852795d-abbf-4a71-91ce-0d87e8a3eb8f" class="">Karasuma Line</h3><p id="38ba26a5-df29-417f-a613-73eb5ffce1dd" class="">The Karasuma line runs north-south through the city, passing for much of its length under Karasuma-dori Street.  It stops directly under Kyoto Station and goes as far south as Takeda and as far north as Kokusaikaikan.</p><p id="8d6df72d-1cf2-4d93-8cd3-1d572520fe5e" class="">This is the best way to travel from Kyoto Station to Downtown Kyoto: the Shijo stop is right in the middle of downtown and Karsuma-Oike stop is at Oike-dori Street, on the north side of downtown.  Heading further north, the Imadegawa stop is convenient for the Gosho and the Imperial Palace Park.</p><p id="8be0c81b-5d03-4a85-b6b3-036d9b2a1601" class="">Most importantly, the Karasuma Line intersects with the east-west Tozai line at the Karasuma-Oike stop, and if you switch here to the Tozai line, you can get easy access to the Higashiyama sightseeing district.</p><h3 id="9b9afabc-3148-4b90-ae3e-d6aef45bb465" class="">Tozai Line</h3><p id="9ba9454c-a394-4d9c-8be9-dd1dfd52bf0d" class="">“Tozai” means “east-west” in Japanese, and like the name suggests, this is Kyoto’s east-west subway line. It runs from Uzumasa-Tenjingawa in the west through the middle of the city before climbing up to the Higashiyama sightseeing district in the east. It then continues east under the Higashiyama Mountains to Yamashina, Daigo (for Daigo-ji Temple) and then south to Rokujizo, a bit north of the suburb of Uji. It intersects with the north-south Karasuma Line at Karasuma-Oike, which provides easy access to and from Kyoto Station.</p><p id="bf144f6e-cfea-4a4f-90a0-4165a2f9d173" class="">The most useful stops on the Tozai Line are Nijojo-mae (for Nijo-jo Castle), Karasuma-Oike (for Downtown Kyoto and the Karasuma Line), Kyoto Shiyakusho-mae (for downtown Kyoto), Sanjo Keihan-mae (for the north end of Gion), Higashiyama (for the Okazaki museum district and the Southern Higashiyama sightseeing district) and Keage (for Nanzen-ji Temple and the Northern Higashiyama sightseeing district).</p><p id="743a2782-4848-4dc0-9596-26c30b4b08e1" class="">
+</p><figure id="e70a79cc-4f5b-4189-bdca-d246de02a195" class="image"><a href="Getting%20Around%20Kyoto%20af69ebdd75864efea0de4263bcb1ff8b/image%201.png"><img style="width:611px" src="Getting%20Around%20Kyoto%20af69ebdd75864efea0de4263bcb1ff8b/image%201.png"/></a></figure><hr id="8dc03e2c-cac4-4765-b931-d17489684260"/><h1 id="a06745d2-08fc-4882-9645-0ead792fd63d" class="">Buses</h1><p id="2f4ee60b-9fcf-4398-98e0-a4d83c6e0ba7" class="">Kyoto’s bus system is incredibly extensive: you can get almost anywhere by bus if you know where to board and which bus to board. However, most travelers find the train and subway systems to be faster and easier to use. If you have a group of three or four people, consider taking a taxi instead of a bus for short journeys. The price is about the same and you’ll get there faster and in more comfort.</p><h3 id="3ade9408-a427-4bfc-8c59-f04f685a831d" class="">How to Use the Kyoto City Bus</h3><ul id="8919a3ed-70c1-4cd0-b9fc-b1f604bb72b8" class="bulleted-list"><li style="list-style-type:disc">Enter at the rear of the bus.</li></ul><ul id="9e2e8559-e98a-475c-b84e-cf2748bd6c03" class="bulleted-list"><li style="list-style-type:disc">Use coins to pay your fare into the box at the front next to the driver. The machine next to the driver will change Y500 coins and Y1000 notes.</li></ul><ul id="18881527-d67d-4f91-9ead-91aafe86a22e" class="bulleted-list"><li style="list-style-type:disc">Exit at the front of the bus.</li></ul><ul id="dd4a25e3-d1ea-4c71-9cd7-3bd260aa1f90" class="bulleted-list"><li style="list-style-type:disc">When you want to get off, press the button next to your seat, on the poles or on the ceiling of the bus (you’ll known them when you see them).</li></ul><ul id="cc6afa2f-2bea-4df3-a4a0-02abfe085cc4" class="bulleted-list"><li style="list-style-type:disc">There is a flat fare for buses in the city center: Y220/110 for adults/children aged 6 to 12. Children under 6 ride for free.</li></ul><ul id="17e1c49e-56d6-4672-b689-0a509a1334e9" class="bulleted-list"><li style="list-style-type:disc">For destinations outside the city center, take a seiriken (a small numbered paper ticket) from the machine near the door where you board. Use the number of the ticket to calculate the fare when you get off. Put the ticket into the fare box along with your fare.</li></ul><ul id="37149ef0-a9a8-44f3-8deb-1fe171ae4385" class="bulleted-list"><li style="list-style-type:disc">Some bus stops have signs that indicate when buses are approaching the stop. All bus stops have bus timetables written in Japanese with English route numbers (so you can read them even if you don’t speak Japanese). The schedules list times for weekdays ( 平日 ), Saturdays ( 土曜日 ), and Sundays/holidays ( 日曜日 / 祝祭日).</li></ul><ul id="89ad5a06-717a-4e8c-94ba-faabc1846d1e" class="bulleted-list"><li style="list-style-type:disc">Three-digit bus numbers on a red background indicate loop lines. Two digit numbers on a blue background are usually north-south lines.</li></ul><ul id="4c8577a1-f143-49d1-b571-89493dab2a81" class="bulleted-list"><li style="list-style-type:disc">Take care when you board buses: Kyoto city buses are green; Keihan buses are red and white; Kyoto buses (which serve point north of the city) are tan.</li></ul><hr id="1045a4d0-0333-80f0-b903-cd1f5855edd3"/><h1 id="7648e932-a0ca-481c-a8f3-7bd3aa2271ee" class="">Cycling</h1><p id="7ed825f3-b32e-4053-ba3a-1d62dde03418" class="">Kyoto is regularly voted one of the best bicycle cities in Asia, and for good reason: The city is largely flat, roads are well maintained, drivers are sane and there are plenty of places to purchase or rent a bicycle.</p><p id="dcbeed0c-ea92-40f1-aae3-f78bac50dc1c" class="">There a many places to rent bicycles in Kyoto. You’ll find rental shops in all the main sightseeing districts like Arashiyama etc. However, most shops only have old clunkers with small frame sizes. For a variety of bikes and sizes with foreigner-friendly service, Kyoto Cycling Tour Project seems to be a good bet and also offers cycling maps, guided cycle tours and many other useful services.</p><p id="309d962a-2155-4e1d-aa22-2b1721484c70" class="">
+</p><ul id="3a54cb15-c889-4d63-a888-c174a66b4a7f" class="bulleted-list"><li style="list-style-type:disc">Many Kyoto cyclists ride on sidewalks where they exist. If you choose to do the same, consider renting a bicycle with a bell to clear the way (and please ride slowly and carefully on the sidewalk). Note that it is legal to do so.</li></ul><ul id="800fb03e-5ef4-4faf-8a92-43fe77ddaeab" class="bulleted-list"><li style="list-style-type:disc">Traffic drives on the left in Japan and bicyclists should too.</li></ul><ul id="6f250a7a-13ba-4656-990c-dba8cb6ba2e8" class="bulleted-list"><li style="list-style-type:disc">It is illegal to cycle at night without using a bicycle light (most rental cycles have lights).</li></ul><p id="1045a4d0-0333-809d-b29a-fd107e7e062b" class="">
+</p><p id="6c6c248d-dd85-4ac7-b522-c8ab404b6648" class="">Note that many of Kyoto’s attractions like temples and museums have small bicycle parking lots. If you’re downtown or near Kyoto Station, however, it’s best to park your bicycle in one of the large bicycle parking lots.</p><p id="90768e98-2f75-491d-b774-5bd13cbeae87" class="">It is illegal to park in areas that are not specifically marked as bicycle parking zones or in the bicycle parking lots downtown or at train/bus stations. The city regularly removes illegally parked bicycles to huge bicycle lots in the far south of the city.</p><p id="8afe5072-1645-48d7-a3b1-5ac47f586a9b" class="">So, if you emerge from a store or restaurant and find your bicycle missing, chances are it’s been removed by the city and not stolen. Look for a paper with a map on it near where your bike was parked. This will indicate which bike pound they took your bicycle to.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

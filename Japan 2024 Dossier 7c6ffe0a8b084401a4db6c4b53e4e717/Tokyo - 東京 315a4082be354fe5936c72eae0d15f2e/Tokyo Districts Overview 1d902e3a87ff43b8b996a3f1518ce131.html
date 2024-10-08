@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tokyo Districts Overview</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1d902e3a-87ff-43b8-b996-a3f1518ce131" class="page sans"><header><h1 class="page-title">Tokyo Districts Overview</h1><p class="page-description"></p></header><div class="page-body"><hr id="1045a4d0-0333-8036-bbd1-f29fd7d44bc9"/><p id="ecb3f43e-9794-4d35-9293-2f7c5c641ce5" class="">Tokyo is a massive city comprised of nearly 50 neighborhoods, 62 municipalities, 23 special wards, and 14+ main city hubs, depending on who you ask. This makes Tokyo a confusing place to understand, especially when you realize that many of these neighborhoods, municipalities, and special wards overlap, or have nicknames depending on where you are in Tokyo. </p><p id="bab664f7-db2f-4f3d-b7ae-bfea7cab9c49" class="">Here is a list of all of the Tokyo districts of interest to travelers, starting with the Tokyo Station and Marunouchi Area and then working out from there. The map below shows where these major city hubs lie in relation to each other.</p><p id="66d81d7c-2ba9-425a-9727-75274d9d35c7" class="">
+</p><figure id="12d1dc93-a14e-4a5b-aecc-d7b904d0e375" class="image"><a href="Tokyo%20Districts%20Overview%201d902e3a87ff43b8b996a3f1518ce131/image.png"><img style="width:750px" src="Tokyo%20Districts%20Overview%201d902e3a87ff43b8b996a3f1518ce131/image.png"/></a></figure><p id="f40b5deb-f6a1-45ae-8a7a-acf1c6470203" class="">
+</p><p id="03f8653e-225d-4d29-8283-3144db882154" class="">Note the the JR Yamanote Line is essentially a large circle connecting all these hubs together - it’s often the easiest way to get from place to place.</p><hr id="1045a4d0-0333-805f-bd56-c8f313949668"/><h1 id="563b392a-6ff0-4114-aaf5-7fdd0ffaa265" class="">Tokyo Station Area and Marunouchi Area</h1><p id="fdec7784-bd73-472b-869a-d7aa3dcacb97" class="">The red-brick facade of the beautifully restored Tokyo Station Marunouchi Station building is one of the city’s most striking pieces of architecture, especially distinctive against the glass and steel of neighboring skyscrapers. Behind it lies one of the city’s key transport hubs, connecting the country through bullet trains that run to Hakodate in the far north and to Fukuoka in the far south. Not only does the station contain a wealth of shopping and eating opportunities, but the surrounding areas also offer some of the city’s best sights, from the impressive Marunouchi financial district to Nihonbashi, the downtown center of Edo, the Tokyo of the past.</p><hr id="ef539782-89f7-4116-8110-e1affc1153cd"/><h1 id="aff80c03-4d6b-4a20-a823-d86709fe6401" class="">Imperial Palace Area</h1><p id="bf1612aa-321d-49c7-aea0-1be04ae4f4a1" class="">The Tokyo Imperial Palace Park is a huge expanse of green that lies right in the center of the city. Surrounding the palace are some great shrines, parks and museums. The Imperial Palace marks the center of Tokyo and the symbolic heart of Japan. You can walk around the outside of the Imperial Palace and enjoy views of the lovely moats, bridges and walls of the Palace (this is also Tokyo&#x27;s most popular jogging course). You can also enter the Imperial Palace East Garden, which is a fine escape from the crowds and concrete of the city. And, if you&#x27;re interested in WWII history, do not miss the controversial Yasukuni-jinja Shrine, where several Class A war criminals are enshrined, and the adjoining Yushukan Museum, which presents the nationalist view of Japan&#x27;s wartime history.</p><hr id="1045a4d0-0333-8068-9044-d069c21809fc"/><h1 id="b2743e65-8b94-4692-b469-cb6efc90aebe" class="">Ginza</h1><p id="c4fcd2f1-fe93-4ff6-80c2-d3fb9b3bc3a6" class="">Built on the site of a silver coin mint dating back to the Edo era (1603-1868), Ginza is an area steeped in history with an air of self-assured elegance. Its main street houses some of Tokyo&#x27;s original department stores, and many still flock here for peerless service that matches the high-class products on offer. Ginza&#x27;s backstreets are adventures in boutique shopping and tiny yet exquisite bistros. Rather than resting on its reputation, however, Ginza constantly evolves with the times, providing cultured modernity, energy and old-Tokyo charm.</p><hr id="1045a4d0-0333-8085-b5bb-ce012df3fc3d"/><h1 id="5aaddba8-1666-46d9-b8b9-57ca58820eec" class="">Tsukiji</h1><p id="78a14b71-723b-488e-98e6-b6a5059e430d" class="">From 1935 to late 2018, Tsukiji was home to one of the most famous fish markets in the world. The inner section has since relocated to nearby Toyosu, but the outer market is still in place and as intriguing as it ever was. The Tsukiji Uogashi fresh market located in the outer market is filled with around 60 shops, and visitors can watch a professional fillet a whole tuna. The Tsukiji area, on Tokyo Bay and walkable from Ginza, is a must-see for visitors. You can feast on the freshest sushi for breakfast at the surrounding restaurants or pick up some unique souvenirs, from seaweed to sushi knives and handmade ceramics.</p><hr id="1045a4d0-0333-80b8-89ae-c77aaa7f4bc6"/><h1 id="0fa356fa-1ef8-42c5-a859-adfbb2850d33" class="">Shinbashi and Shiodome</h1><p id="41558d5d-1016-4cea-9b8c-df850c9b47ee" class="">The massive towers along Tokyo&#x27;s waterfront in Shiodome are home to global companies like Panasonic and Fujitsu. Every morning, you can witness hordes of office workers rushing off the trains and darting towards these skyscrapers. Once work finishes, the same suit-clad businessmen and women stroll to the izakaya-lined streets of neighboring Shimbashi for drinks. Experience this mix of business and pleasure by heading to the Caretta Shiodome office building and shopping complex in the afternoon, with its spectacular views of the bay. Once the sun goes down, enjoy eating and drinking with locals at one of the popular izakaya in the area near Shimbashi Station. </p><hr id="1045a4d0-0333-80f6-ac00-eeddca5306c9"/><h1 id="ec4bf1e2-2303-489c-9ed8-cc8adf40a11c" class="">Shinagawa and Tennozu</h1><p id="22c0e838-25f5-42ad-b28d-fd043ae4c895" class="">Shinagawa Station is also a Shinkansen station and one of the stops on a direct route to Haneda Airport. Most local JR trains pass through here as well. Yet the area offers much more than a quick coffee stop on the way to somewhere else. Venture out of the station to discover modern waterfront developments, great food, shopping, recreation and historical legends laid to rest.</p><hr id="1045a4d0-0333-8059-a3d1-ea2d2058b925"/><h1 id="cae9aeef-2066-43c8-bdf7-303dfc42e27f" class="">Hamamatsucho</h1><p id="872b901c-fa58-47f1-b0fa-8a1c0be94916" class="">Hamamatsucho is the gateway to Tokyo and beyond, offering a multitude of hotels and convenient bus, rail and ferry connections. Nearby Tokyo Tower dominates the skyline, glowing orange at night or decked out in colored lights for special occasions. The thriving business district comes alive at night as its many small bars and bistros open. By day, the area&#x27;s wide streets are perfect for strolling to the traditional Kyu-Shiba-Rikyu Gardens and Hama-rikyu Gardens, or even down to Tokyo Bay. You can catch a ferry to Asakusa or Odaiba from Hinode Pier, or venture further out to Tokyo&#x27;s Izu Islands from the Takeshiba Passenger Ship Terminal.</p><hr id="1045a4d0-0333-803f-bd35-d183411f0d34"/><h1 id="b34a5e4b-1bb7-486f-8dd8-3404721ce3d5" class="">Roppongi</h1><p id="59994d4e-7d5b-4262-9065-c00630fd81f9" class="">One way to think about Roppongi is that it has two sides. On the one hand Roppongi is one of Tokyo’s most opulent, upmarket areas, featuring world-class art museums, Michelin-starred restaurants and lots of luxury shopping destinations. On the other hand it is one of Tokyo’s most raucous party neighborhoods, full of restaurants, bars and clubs that stay open late. These two sides of Roppongi contrast, but they do not clash. It has a cosmopolitan flavor with an exciting mix of high and low.</p><hr id="1045a4d0-0333-808b-be74-fefef05d5665"/><h1 id="c7a70018-d254-4c3c-b474-c1d08d69e77a" class="">Akasaka</h1><p id="ad8b8073-f1e2-49c8-a9e0-c749bbabed0a" class="">Akasaka is a sophisticated mix of upscale bistros, luxury hotels and corporate headquarters. Located close to the edge of the original Edo Castle, the area is now a grown-up destination for dining and shopping, with a large share of Tokyo&#x27;s Michelin-starred restaurants, and many of Tokyo&#x27;s premier hotels. You can have fun here as well—explore the cobbled backstreets, discover the magic of a ninja-themed restaurant, and see the large number of fox statues at Toyokawa Inari Tokyo Betsuin Temple.</p><hr id="1045a4d0-0333-80d8-81bc-cfb5ab1f6b6b"/><h1 id="d968f17d-89f3-40df-a807-cb0e92b9466d" class="">Shinjuku</h1><p id="fff5a4d0-0333-800e-96d5-e9e7744328aa" class="">A station bursting to the seams, armies of office workers, school kids and international travelers squeeze through Shinjuku Station&#x27;s ticket gates on a daily basis—out into a sprawling area of towering skyscrapers, wide shopping streets and countless cafes, bars and restaurants. Nishi-Shinjuku, west of the station, houses a forest of skyscrapers with the Tokyo Metropolitan Government Building lit up with projection mapping throughout the year. The east side of the station is your access point for shopping, dining and entertainment. Bathed in neon, the area of Kabukicho is a maze of hotels and spots for nighttime revelry. Exit south from the station to find the Shinjuku Expressway Bus Terminal and modern shopping complexes such as NEWoMan Shinjuku.</p><hr id="1045a4d0-0333-80da-9226-d78a98715512"/><h1 id="e6f965af-2d88-4e6f-bec7-f75e163b1286" class="">Harajuku</h1><p id="9578193c-62a2-4c91-8e99-f9644d03ff90" class="">Harajuku is a station located between Shibuya and Shinjuku on the JR Yamanote loop line around central Tokyo. Many people get off the train at Harajuku Station to visit such popular spots as Yoyogi Park, Meiji Shrine and Omotesando, a boulevard of luxury brands and other high-end shopping experiences. Historically, Harajuku was a post town, which is reflected in the kanji characters that make up its name: “meadow lodging.” But today Harajuku has a completely different, and global, appeal as a birthplace of kawaii (cute) culture. Harajuku is also home to Tokyo’s oldest wooden station building. In June 2020, the area surrounding Harajuku Station was updated with shops and restaurants to become a ‘A New Stage in Tokyo for Global Culture and Creation.’ This trend-setting Tokyo hotspot is well known for its cuisine, shopping and events.</p><hr id="1045a4d0-0333-80cd-8f84-c23a7e951d9f"/><h1 id="14ba87f1-2065-4dde-b85e-fd9e451e5536" class="">Aoyama and Omotesando</h1><p id="61718902-6943-4b90-9711-4709802f6a87" class="">Flanked on three sides by Tokyo&#x27;s premier hubs of neon and nightlife—Shibuya, Shinjuku and Roppongi—the streets of Aoyama and Omotesando are cut from slightly more elegant cloth. This is an upper-class area of boutique shopping and sophisticated dining. Flagship stores of major fashion brands rub shoulders on the tree-lined boulevard of Omotesando—Tokyo&#x27;s answer to the Champs Élysées—and the backstreets of Aoyama are home to small boutiques and highly acclaimed dining spots. The area offers quiet open spaces of seasonal color such as Meiji Jingu Gaien and Aoyama Cemetery, as well as a host of architectural and artistic highlights.</p><hr id="1045a4d0-0333-80cc-b62c-cbdc51d01d60"/><h1 id="72ee5d1b-933c-423e-8bcb-137a14102b6d" class="">Shibuya</h1><p id="5baeb4aa-a116-451f-88b6-c7b11172dae5" class="">Artistic shots of Shibuya&#x27;s iconic crossing continue to feature on the pages of global fashion and travel magazines, and for good reason. The chaotic, yet miraculously organized crossing has become a symbol of Tokyo&#x27;s dynamism, and represents Shibuya—Japan&#x27;s trend-setting powerhouse dedicated to fashion and arts. Join the crowds as they diverge off into the many streets and alleyways to shop and hangout in hip cafes, bars, and restaurants. Spend time appreciating the area&#x27;s fiercely independent art scene, or simply visit to experience the rapid-beating heart of Tokyo.</p><hr id="1045a4d0-0333-80b3-bebc-deab760c38e0"/><h1 id="eb02f2c8-d2a1-4490-a4cd-a7c87b64b888" class="">Shimokitazawa</h1><p id="4cac395a-74d6-4cd9-be9b-0497e93082d3" class="">Shimokitazawa, also known as &quot;Shimokita,&quot; is only a stone&#x27;s throw from Shibuya and Shinjuku, but the intensity of the city drops a few degrees when you pull into the station. This laid-back bohemian district is home to vintage clothing stores, select bookstores, music shops and funky, distinctive cafés and bars. Shimokitazawa doesn&#x27;t really kick into gear until lunchtime, so schedule an afternoon of select shopping followed by an evening in one of the cozy bars and cafes.</p><hr id="6bf31700-e4c9-4c30-aeaa-f31f91b859a3"/><h1 id="ef23df9a-7230-43da-bd59-6c2a24a8ef64" class="">Ebisu</h1><p id="ede37e0f-be59-46b8-93f6-a347a6554082" class="">Just south of Shibuya and a short walk from fashionable Nakameguro and Daikanyama, Ebisu is one of Tokyo&#x27;s most desirable residential areas. A modern neighborhood with generous green spaces, it offers world-class restaurants, grand hotels, stylish retail and cutting-edge art in a relaxing atmosphere. Stroll in the park, relax in a café with a terrace, and sample the local Yebisu beer, which has a strong connection to the area.</p><hr id="1045a4d0-0333-806b-ae2b-cd8ef5f2b476"/><h1 id="19890dc0-b08b-42f4-97b7-67a0de6076e3" class="">Tokyo Tower &amp; Surrounding Area</h1><p id="45871ab3-e2a1-4057-8aaa-ac2a9512a8b0" class="">Built in 1958, and standing 333 meters tall, Tokyo Tower serves as a symbol of Tokyo’s rebirth after World War II. At the time of its completion, it was the tallest tower in the world, surpassing even its inspiration, the Eiffel Tower. A total of about 220,000 craftsmen completed the construction in only a year and a half, even though much of the work was done by hand.<br/>It remains a popular destination and photo spot for tourists. Two observation decks provide extensive views across the city and a four-story complex on the ground floor offers shopping, food, and entertainment.The tower is surrounded by notable temples and parks, and is neighbored by Roppongi, Shiodome, Toranomon, and Shinagawa, all worthwhile destinations in their own right. Spend a morning or afternoon venturing to the tower and exploring the surrounding attractions.<br/></p><hr id="1045a4d0-0333-8005-a4d3-f04e962998d3"/><h1 id="1b0ae6af-27d1-48cc-a7e8-fe18e229444b" class="">Daikanyama</h1><p id="8628f07a-cec9-4364-a2e3-8ed25130ba6e" class="">Surrounded by Shibuya, Nakameguro and Ebisu, Daikanyama is home to high-end fashion boutiques and some of Tokyo&#x27;s best brunch spots. The leafy streets are where the capital&#x27;s fashionistas come to see and be seen. Feel like a celebrity browsing the backstreet boutiques and grab a seat on the terrace in one of the area&#x27;s many hip cafes.</p><hr id="1045a4d0-0333-8054-bf9c-c2aa7abe818a"/><h1 id="fff5a4d0-0333-8018-aee2-e5d0cdce6173" class="">Meguro/Nakameguro</h1><p id="d919fda3-bcbf-4d98-a428-95c622d1669a" class="">Centered around the Meguro River and within walking distance of the trendy districts of Daikanyama and Ebisu, Nakameguro holds its own in the sophistication stakes. The area is home to a range of cool cafes and restaurants, hip interior and accessory shops and the Nakameguro Koukashita—700 meters of bars and stores anchored by uber-modern bookstore Nakameguro Tsutaya Books. Nakameguro is a bustling bastion of cool throughout the year, but you&#x27;ll find the crowds swell in late March and early April when the densely packed riverside cherry trees bud and blossom, creating an ultra-photogenic tunnel of pink.</p><hr id="1045a4d0-0333-8069-bd54-d1ec75421bdd"/><h1 id="837fceda-9a17-49f1-b031-629e7ab8507e" class="">Akihabara</h1><p id="fff5a4d0-0333-809d-b2f3-d7189b1663b1" class="">Beginning its existence as a center of postwar black-market activity, Akihabara later became the showcase of Japanese tech, jam-packed with shops selling all kinds of electronics and IT to the world. More recently, it has also become the cultural home to the diehard fans of gaming, manga and anime—the otaku. The area is an urban temple for worshippers of Japanese subcultures with pop idols, and cosplayers. Stroll Akihabara&#x27;s avenues for a one-of-a-kind cultural experience.</p><hr id="1045a4d0-0333-802c-89bf-c5600047d0a9"/><h1 id="9f08251a-672b-40f8-87e6-f62df3738b19" class="">Kanda and Jimbocho</h1><p id="29a6b19a-a77a-4778-a159-272a51402ef6" class="">With a number of universities within walking distance, the Kanda and Jimbocho area has a laid-back, student-town atmosphere that&#x27;s perfect for leisurely exploration. Students flock to the Mausoleum of Confucius at Yushima to pray for good exam results, and readers trawl Jimbocho for new and secondhand books. If you&#x27;re hungry, try the delicious and inexpensive local curry or soba. Close to Tokyo Station, Ueno, Ochanomizu and Akihabara, it&#x27;s a convenient base for exploring the wider city.</p><hr id="80b0e807-edb6-467e-a5d6-4ab212320887"/><h1 id="c16569fd-436d-41b5-9df3-c88da5a71f50" class="">Ueno</h1><p id="c36b3361-ad4d-4dc5-8828-82af0377833b" class="">Take a short walk from the bustling transport hub of Ueno Station and find yourself in a cultural and recreational haven. Expansive Ueno Park that sits next to the station houses many museums, a large boating pond, a shrine with a pagoda and a large zoo—home to the two-tone mascot of the area, the panda. The park is the focus of attention in April as the many cherry trees burst into bloom. Follow the train tracks of the Yamanote Line towards neighboring Okachimachi Station to experience Ameyoko—the bustling shopping street where the distinctive calls of market sellers can be heard selling everything and anything from clothes, spices, cosmetics and fresh fish.</p><hr id="1045a4d0-0333-8032-8b19-cdf8ab935912"/><h1 id="c3708432-f9eb-4520-880c-a283fbafeded" class="">Asakusa</h1><p id="207b8d40-a013-4fbc-a85d-3c8592ab30d9" class="">Asakusa—an area centered around Sensoji Temple with Kaminarimon (&quot;Thunder Gate&quot;) and Nakamise shopping street—is surrounded by water and immersed in rich tradition. Take in riverside views, hop on a boat for a riverside cruise, or stroll the traditional streets filled with stalls and authentic souvenir shops selling quintessential Japanese goods. Visit Asakusa to experience true Japanese traditions, arts and crafts, and take a little piece home with you.</p><hr id="1045a4d0-0333-8069-90cf-f56481455fda"/><h1 id="fff5a4d0-0333-8053-90f0-e7a5173943d6" class="">Ryogoku</h1><p id="65de5e71-b503-46a1-a67e-4e23e9e2e7fc" class="">Sitting next to the Sumida River, Ryogoku is home to tiny workshops producing traditional crafts as well as sumo stables—the training bases of the bulky wrestlers. The home of Japan’s national sport—the Ryogoku Kokugikan arena—is close to the station. If your trip coincides with one of the three annual tournaments held here, you can witness firsthand the sheer power of the oversized rikishi accompanied by fluttering flags and pounding drums. Ryogoku is filled with the spirit of the Edo period (1603-1868) and you can experience and explore this period of dramatic cultural change in one of Ryogoku’s many museums.</p><hr id="1045a4d0-0333-80c6-b4cf-ce3c4d6f9b12"/><h1 id="eb0f59a7-afc2-4bf7-b6e1-1b25c6d89fd3" class="">Skytree &amp; Surrounding Area</h1><p id="af3a8009-3c15-4f74-87b9-a4850109b5e2" class="">Visible from all over the city, Tokyo Skytree has overtaken Tokyo Tower as the new symbol of the capital. A trip to the top gives you sweeping views of the metropolis and beyond; in good weather you can spot Mount Fuji looming on the horizon. At its feet is the large shopping complex Tokyo Solamachi as well as a number of interactive museums. A short walk away, you can find the retro &quot;Shitamachi Ninjo Kirakira Tachibana Shotengai&quot; shopping street. The Tokyo Skytree area is much more than just the tower.</p><hr id="1045a4d0-0333-8064-8b1f-f1b2ac8d9019"/><h1 id="d5083a07-59e2-42ca-b06e-8b36f9858da7" class="">Odaiba</h1><p id="c258d7e3-32ca-4eb4-b32f-2c06802b9794" class="">An ultramodern area on Tokyo Bay, the Odaiba district is your go-to place for pleasure cruising, shopping and general seaside fun. The island built in Tokyo Bay was originally created by the Edo shogunate in the 1850s to protect Tokyo from the threat of marine attacks. Today it serves a very different purpose—as a breezy entertainment hub with attractions for the entire family. Set aside a full day for maximum enjoyment.</p><hr id="2f0fe71a-6ac0-4e5f-840f-3e7f30c1f387"/><p id="aea0d33b-5b28-4baa-9903-701b0cec9c74" class="">
+</p><p id="a3aedfcd-9fac-404e-9a38-095ca31934ce" class="">
+</p><p id="48a08fdb-3e44-4864-9e05-bb256d101911" class="">
+</p><p id="7e921c8e-0073-4be7-b88f-6e4aaedc9f98" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

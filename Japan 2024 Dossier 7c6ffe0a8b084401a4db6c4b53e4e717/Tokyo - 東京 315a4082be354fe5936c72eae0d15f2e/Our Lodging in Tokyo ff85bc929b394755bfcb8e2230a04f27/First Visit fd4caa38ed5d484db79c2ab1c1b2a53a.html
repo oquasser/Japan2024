@@ -1,0 +1,691 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>First Visit</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fd4caa38-ed5d-484d-b79c-2ab1c1b2a53a" class="page sans"><header><h1 class="page-title">First Visit</h1><p class="page-description"></p></header><div class="page-body"><hr id="1045a4d0-0333-80b0-bd3d-f1ddd5a55335"/><h1 id="48ecda5d-f572-4a5a-ba5c-9162550267e2" class="">Cerulean Tower Tokyu Hotel</h1><p id="8c33345f-7f59-4727-beda-b3e6bfc1a200" class="">
+</p><figure id="b541ab1a-6a91-4896-be72-d76a4ff19aca" class="image"><a href="First%20Visit%20fd4caa38ed5d484db79c2ab1c1b2a53a/image.png"><img style="width:708px" src="First%20Visit%20fd4caa38ed5d484db79c2ab1c1b2a53a/image.png"/></a></figure><p id="3be86975-c4cc-46fe-aa43-cbf50981f97b" class="">
+</p><p id="79abca0a-f46b-40fc-8a1d-5f353225ef01" class="">The 40-floor Cerulean Tower Tokyu Hotel dominates the skyline of Tokyo’s vibrant Shibuyu district, where Japanese culture, fashion, and entertainment intermix. Take in the views of the glittering cityscape from your sophisticated guest room or suite. Dine at the hotel’s renowned restaurants and have a drink at the jazz bar. Enjoy an abundance of amenities from an art gallery to a spa and indoor pool. Highlights of the hotel include:</p><ul id="d6fec99d-5d8f-4893-b26c-1a232965eb54" class="bulleted-list"><li style="list-style-type:disc">408 guest rooms and suites featuring contemporary design with sweeping views</li></ul><ul id="a4d24915-9caa-4f0b-8c05-9897d708126f" class="bulleted-list"><li style="list-style-type:disc">Dining options such as sashimi and Japanese cuisine at Sakuragaoka restaurant</li></ul><ul id="3cc86495-f87c-4b38-adf4-2550b6be9490" class="bulleted-list"><li style="list-style-type:disc">Amenities such as a spa, beauty salon, fitness, indoor pool, hot tub, sauna, and more</li></ul><ul id="f8d9321a-3860-4abb-97c2-f78d5798faae" class="bulleted-list"><li style="list-style-type:disc">A prime location near Shibuya Crossing, Tokyo’s answer to Times Square</li></ul><p id="093e7e4c-3ab4-47ca-9a3c-2cce6541bb8e" class="">
+</p><p id="65d94c19-e8e6-4317-aaa8-5dc2ec9f2181" class="">Set near the Meiji Jingu Shrine, a quiet escape surrounded by 100,000 trees, Cerulean Tower Tokyu Hotel invites travelers to explore one of the city&#x27;s most serene spots before or after exploring the hotel&#x27;s vibrant home neighborhood.</p><h3 id="1155a4d0-0333-8057-af73-fd63066693fb" class="">Confirmation Numbers</h3><ul id="1155a4d0-0333-80e5-b9cb-ee52f74c9a06" class="bulleted-list"><li style="list-style-type:disc">20240804837726030</li></ul><ul id="1155a4d0-0333-8097-84d9-d73fb1d70238" class="bulleted-list"><li style="list-style-type:disc">20240804837726059</li></ul><ul id="1155a4d0-0333-8013-9676-e8aa6ce442b7" class="bulleted-list"><li style="list-style-type:disc">20240804837726045</li></ul><hr id="1045a4d0-0333-8057-901a-f9416cf83c3e"/><h2 id="386b868b-fdcd-4e77-b40e-f9901a0ee48b" class="">Accommodations</h2><figure id="d85d6036-eac3-4d48-8207-ca2c7c45654d" class="image"><a href="First%20Visit%20fd4caa38ed5d484db79c2ab1c1b2a53a/image%201.png"><img style="width:708px" src="First%20Visit%20fd4caa38ed5d484db79c2ab1c1b2a53a/image%201.png"/></a></figure><p id="ae17ddbe-8722-4b89-bf84-d10b29ec3cea" class="">You will feel on top of the world at the Cerulean Tower Tokyu Hotel, as all 408 rooms are located between the tower’s 19th and 37th floors, providing dazzling views of the cityscape and Mount Fuji. Soak in the tub, throw on a fluffy robe, and sip a green tea in your relaxing and tranquil space. Sizable suites provide smart living spaces, and some add distinctive touches like the tatami mat floors in the Japanese Suite. If you stay on the executive floors, you have access to the exclusive lounge.</p><p id="7801b762-1ea2-4030-a940-e9391fad8f8d" class="">Enjoy room service from the hotel’s excellent restaurants. The concierge can also help you reserve a meeting room or book the childcare service.</p><hr id="1045a4d0-0333-8060-8f59-c5306caba88b"/><h2 id="d1c66c3c-3928-4d3c-8922-63f068be61fa" class="">Dining</h2><figure id="4717ad03-c724-4188-8546-ef853274c0e5" class="image"><a href="First%20Visit%20fd4caa38ed5d484db79c2ab1c1b2a53a/image%202.png"><img style="width:708px" src="First%20Visit%20fd4caa38ed5d484db79c2ab1c1b2a53a/image%202.png"/></a></figure><p id="6df558cf-2dbb-45e3-8812-db5be5c555dc" class="">From upscale French classics to Japanese fine dining and casual afternoon tea, the Cerulean Tower Tokyu Hotel combines diverse dishes with stunning city views at a dozen delicious bars, restaurants, and lounges.</p><ul id="fff5a4d0-0333-8036-918d-ef792b3bb66f" class="bulleted-list"><li style="list-style-type:disc">Tower’s Restaurant <strong>COUCAGNO</strong> - Indulge in Provencal cuisine with a modern twist at COUCAGNO. Enjoy an elegant white-themed setting, with sunshine by day and sparkling city views by night.</li></ul><ul id="cdd329c8-a8fe-4aff-b354-3dc8d1c043ca" class="bulleted-list"><li style="list-style-type:disc">Tower’s Bar <strong>BELLOVISTO</strong> - Enjoy the breathtaking Shinjuku skyline view and savor fine spirits and chef-selected dishes in a relaxed, elegant ambiance.</li></ul><ul id="ddf5b18e-52d3-4391-9da2-6e99092a019e" class="bulleted-list"><li style="list-style-type:disc">Japanese Cuisine <strong>SAKURAGAOKA</strong> - Experience the essence of Japan&#x27;s four seasons with exquisite Kaiseki and tempura at SAKURAGAOKA, where every dish is a sensory delight.</li></ul><ul id="4ae7868e-0453-41b5-acf8-e788a2a67748" class="bulleted-list"><li style="list-style-type:disc">Chinese Restaurant <strong>CHEN</strong> - Szechwan dining at its finest, CHEN presents authentic dishes prepared by renowned chef Kenichi Chen, showcasing a rich variety of Szechwan spices.</li></ul><ul id="ba5afd8e-19d2-46c2-bbab-ac457e22647d" class="bulleted-list"><li style="list-style-type:disc">Teppan-yaki <strong>SAKURA</strong> - At SAKURA, enjoy the natural flavors of choice ingredients in a lively atmosphere. Engage with master chefs as they prepare teppanyaki delights.</li></ul><ul id="b941feaf-7e7d-4087-9041-0f6c6eec1e94" class="bulleted-list"><li style="list-style-type:disc"><strong>Sushi Ito Ikkan</strong> - Relish seasonal sushi at Ito Ikkan, where each piece embodies the essence of Japan’s changing seasons, promising a moment of culinary bliss.</li></ul><ul id="4a943725-a42d-47ac-99f3-d3bf683da345" class="bulleted-list"><li style="list-style-type:disc">Cigar Bar <strong>R261 CIGAR &amp; ROCK</strong> - R261 CIGAR &amp; ROCK blends the allure of cigars with rock music, offering a sophisticated nightlife retreat in Shibuya’s vibrant scene.</li></ul><ul id="a6ebe699-9354-4f6b-a608-83516f89e0a7" class="bulleted-list"><li style="list-style-type:disc">Jazz Club JZ Brat SOUND OF TOKYO - Discover live jazz at JZ Brat, paired with fine cuisine and an extensive drink menu. Enjoy performances from a dynamic lineup of talented musicians.</li></ul><ul id="2e92d833-2e5f-4fb1-acbf-381c642d1c1c" class="bulleted-list"><li style="list-style-type:disc">Garden Kitchen <strong>CARAMELO</strong> - CARAMELO offers a world-class menu free from genre constraints. Savor delicious meals at any time in a welcoming setting.</li></ul><ul id="c6a7674e-73c5-42d9-b55a-870f94ed1c15" class="bulleted-list"><li style="list-style-type:disc">Garden Lounge <strong>ZABOU</strong> - Relax in ZABOU with views of the Kanzatei garden. Enjoy premium coffee, tea, and delectable desserts, from afternoon tea to evening cocktails.</li></ul><ul id="302dbc5c-f8b2-41cc-9a28-da8a4055f3eb" class="bulleted-list"><li style="list-style-type:disc">Ryotei <strong>CERULEAN TOWER SUKIYA</strong> - Enjoy traditional Kaiseki cuisine in a setting perfect for business and family gatherings at this elegant spot that features intimate “Sukiya” style rooms.</li></ul><ul id="5ea54cf4-0b5d-4f82-94d5-fe99cd7660ee" class="bulleted-list"><li style="list-style-type:disc"><strong>Pastry Shop</strong> - Next to Garden Kitchen CARAMELO, the Pastry Shop offers a variety of sweets, breads, and baked goods crafted with love by our pastry chef.</li></ul><hr id="935542a9-a303-4f9b-afa8-f2dd9c2f86a8"/><h2 id="319cd666-8a28-4689-9af1-e2d5b53a64c8" class="">Amenities</h2><ul id="b55b4ee6-87ee-48eb-827d-b5b11466954d" class="bulleted-list"><li style="list-style-type:disc">Fitness Center with Gym</li></ul><ul id="f565f42d-b74e-4c57-8f77-58680c31fcd9" class="bulleted-list"><li style="list-style-type:disc">Bar/Lounge</li></ul><ul id="0dbca869-8963-4483-bd11-2a0e78f6398e" class="bulleted-list"><li style="list-style-type:disc">Hot Tub/Indoor (Adult) Heated Pool/Sauna</li></ul><ul id="ee374763-d326-43a5-bf2f-1258d43cbabd" class="bulleted-list"><li style="list-style-type:disc">Coffee Shop</li></ul><ul id="87916335-0160-41e6-bcb2-7723f5206766" class="bulleted-list"><li style="list-style-type:disc">Taxi Service</li></ul><ul id="ff22f7af-b22d-43c9-a70e-e0c91627ae6b" class="bulleted-list"><li style="list-style-type:disc">Spa/Massage Service</li></ul><ul id="018f51b9-ce8c-4835-98da-3e6e806966a0" class="bulleted-list"><li style="list-style-type:disc">Convenience Store</li></ul><ul id="9bd7574f-691a-4e48-8b4b-62e41cef1911" class="bulleted-list"><li style="list-style-type:disc">On-site ATM</li></ul><ul id="4b6fdf19-e778-4d28-b606-d79b2dc5edc4" class="bulleted-list"><li style="list-style-type:disc">Free Internet</li></ul><ul id="29502f8f-9dc8-4b3b-a0b6-c27e6ed8cfeb" class="bulleted-list"><li style="list-style-type:disc">Airport Transportation</li></ul><ul id="90a65c63-6a18-4805-8b9d-dc14c8d924a6" class="bulleted-list"><li style="list-style-type:disc">Wifi</li></ul><ul id="81531ecf-d6d9-494b-acf6-8c471ee47a63" class="bulleted-list"><li style="list-style-type:disc">Rooftop Bar</li></ul><ul id="af51f01c-2d11-4a12-9d01-15713071279f" class="bulleted-list"><li style="list-style-type:disc">Baggage Storage</li></ul><ul id="54343526-5632-4b67-919a-dca426824da5" class="bulleted-list"><li style="list-style-type:disc">Concierge</li></ul><ul id="fff5a4d0-0333-80ae-a3ae-eec4860b9c29" class="bulleted-list"><li style="list-style-type:disc">Currency Exchange</li></ul><ul id="23753111-f32a-448d-b511-2ab5a4a3004c" class="bulleted-list"><li style="list-style-type:disc">Laundry Service</li></ul><hr id="1045a4d0-0333-80af-a3d1-f135828a935b"/><h2 id="703a5a18-2ab8-4697-95c8-8676f6baf5f5" class="">Location</h2><p id="b6908858-8a26-4f96-ad8a-d2dce9caf813" class="">Tokyo locations do not come hipper than this. Located in the vibrant Shibuya District, Cerulean Tower Tokyu Hotel stretches high into the sky and overlooks excellent shopping, dining, and nightlife. Bustling Roppongi Hills is close by, and Nogi Jinja Shrine and the Tokyo Tower are two miles away.</p><p id="20f1d55f-fb85-4633-b057-058e9bdeb2c1" class="">
+</p><figure id="7c2817c6-5c85-4822-93c5-f824a56f6df0" class="image"><a href="First%20Visit%20fd4caa38ed5d484db79c2ab1c1b2a53a/image%203.png"><img style="width:572.9971313476562px" src="First%20Visit%20fd4caa38ed5d484db79c2ab1c1b2a53a/image%203.png"/></a></figure><p id="5c4ca15e-599e-4c0d-b3cb-69cf8e28a7cb" class="">
+</p><p id="f8993e3f-a50e-449a-b39c-44cffa1466d3" class=""><strong>Address</strong>: 26-1 Sakuragaoka-cho Shibuya-ku, Tokyo Japan 150-8512</p><p id="be051823-2cc3-4e3b-a789-99747cc8a0da" class="">5 minutes walk from Shibuya Station</p><p id="f50d7b94-0be4-4f4a-9383-78ab35dcb0cb" class="">
+</p><figure id="10517412-0823-4b9c-bcf6-08286047fffb" class="image"><a href="First%20Visit%20fd4caa38ed5d484db79c2ab1c1b2a53a/image%204.png"><img style="width:708px" src="First%20Visit%20fd4caa38ed5d484db79c2ab1c1b2a53a/image%204.png"/></a></figure><p id="39a31ccb-a2da-45ed-8f8a-0fb8766d1e0c" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,699 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Love Hotel Hill</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2484da20-8e10-42bb-8b8c-6902a1379ec1" class="page sans"><header><h1 class="page-title">Love Hotel Hill</h1><p class="page-description"></p></header><div class="page-body"><hr id="1045a4d0-0333-80b9-a749-c0ba989acacc"/><figure id="606395b1-7ccd-43b0-9265-42100638aa18" class="image"><a href="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image.png"><img style="width:707.9947509765625px" src="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image.png"/></a></figure><p id="c5e19e0c-a093-43ae-99a9-58c7135f5b26" class="">
+</p><p id="ae1012c4-ff51-45b7-a7ef-70bec3a6c327" class="">With restaurants, shops and clubs on every corner, the face of Shibuya is constantly changing, but Love Hotel Hill retains a unique charm. The illicit area behind Dogenzaka has remained as a reliably eclectic mishmash of love hotels and sex shops.</p><figure id="3f2325f8-eeac-42b5-9218-73531c4d5d26" class="image"><a href="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%201.png"><img style="width:707.9947509765625px" src="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%201.png"/></a></figure><p id="2fffb21d-9cb4-4ddf-a6b5-8e0cf9be7347" class="">Shibuya is known for being a hub of entertainment, with a recent mayor claiming that his aim was for the area to be likened to “New York or London.” It’s a region that is constantly being redeveloped. This was particularly evident prior to the now-infamous 2020 Tokyo Olympics. Buildings are often torn down and new skyscrapers built in a minute.</p><p id="b5290c8b-1cfa-4b5d-ba8b-94bfcb98f35d" class="">Since 2018, Shibuya’s skyline has seen six new skyscrapers, built to advertise the city to the world in time for 2020. And there are more to come. As part of the ongoing developments, the 70-year-old Tokyu Store will be replaced by a 36-story skyscraper with a hotel, shops and apartments.</p><p id="6b2b8f70-a94f-45ef-8854-4443831554ea" class="">Further up the road, in Dogenzaka, two of Shibuya’s favorite clubs: Vision and Contact are set to be demolished to make way for a 30-story high-rise with hotel and offices. The news of the latter has been met with a sigh of resignation from the clubbing community, a tight scene that is accustomed to the constant changing of the urban landscape.</p><p id="672eb456-2765-4691-8e76-1b139b3e1297" class="">Across the lights from Contact however, lies the entrance to Love Hotel Hill.</p><p id="4978bad8-0d0d-41f4-bf8f-87417526006a" class="">
+</p><figure id="e405575d-52cb-4882-bfdc-9e52124b1f02" class="image"><a href="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%202.png"><img style="width:707.9947509765625px" src="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%202.png"/></a></figure><p id="78392c0a-9927-41ec-8ebd-09c7cb5bceb9" class="">
+</p><p id="2fd2662b-8129-479b-80e1-dd33a167f3e0" class="">For the uninitiated, love hotels are a place to ‘stay’ for a few hours, often with a sexual partner, although they also offer night packages for people who are genuinely looking for a place to stay. They were originally used mostly by female sex workers to take control of their environment and offer their services in a safe space.</p><p id="0ac6b6c9-4e65-4aad-8263-dbba547c6008" class="">Over the years, especially during the 1970s, love hotels evolved and eventually became popular among lovers as privacy can be a hard thing to find in Tokyo’s tiny apartments with paper-thin walls. Soon they were sought after by more and more members of the general public.</p><p id="61c917aa-684d-4d58-9c64-20dc5c831944" class="">Due to the stigma behind love hotels, it was difficult to advertise, so the buildings had to be as alluring as possible to attract customers. The popularity of an elaborate castle-style love hotel in 1973 spurned a series of copycats. Gradually the exteriors became gaudier and gaudier. Until 1984 that is, when love hotels were strictly regulated under an entertainment law.</p><p id="33bd53a0-da64-4cf8-98ed-08e455827efe" class="">
+</p><figure id="19133447-2490-4a1e-9cae-2fde689da66a" class="image"><a href="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%203.png"><img style="width:707.9947509765625px" src="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%203.png"/></a></figure><p id="b108f95e-4808-470c-898d-9ced2b856efa" class="">
+</p><p id="6ae281c4-112e-4562-867a-a9ab8f591416" class="">The high concentration of love hotels in Dogenzaka has turned the area into something of an adult zone. Not only are there hotels but massage parlors, sex shops and pink salons (specializing in oral sex) are also rife, hidden in plain sight under neon signs and flashing lights.</p><p id="264ac42e-7628-47f6-81b6-eb0d55cf82b4" class="">Many love hotels around Shibuya Love Hotel Hill are simple neon affairs, with signs advertising ‘Rest’ and ‘Stay’ but some throwback to the gaudy heyday of castles, pirate ships and gimmicks. A notable example is the Sweets Hotel Ruby, adorned with giant plastic donuts and biscuits. It offers pick ‘n’ mix tubes and has lollipops hanging from the ceiling. One for the teatime lovers.</p><p id="2d1523ff-5b00-461b-baa2-337a4e904bf4" class="">
+</p><figure id="e4409e87-eb43-4e17-8db4-db41afa6d14a" class="image"><a href="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%204.png"><img style="width:707.9947509765625px" src="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%204.png"/></a></figure><p id="cf9421de-c772-4ef7-8624-b73ded743cf7" class="">
+</p><p id="425908d7-3817-44f7-80b2-6c52a02648e2" class="">Another is Hotel Casanova, which is like Paris Hilton’s dream bedroom. There are blue pinstripes, pink piping and gold neon stars on the walls.</p><p id="055e2d57-0e94-4a81-a3d4-0a496827a6a0" class="">
+</p><figure id="ab1d02a2-d232-409f-8fdb-3c8602812f4d" class="image"><a href="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%205.png"><img style="width:707.9947509765625px" src="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%205.png"/></a></figure><p id="43109a7c-7de1-4a0e-803c-73caa17fbf74" class="">
+</p><p id="21b54f5e-e6d0-465b-9374-1727c7388838" class="">Hotel Sunreon 2 is just around the corner, in pastel colors blocks like a motel in Texas.</p><p id="392d3cb8-a2b2-4775-a6d9-f3985a406823" class="">
+</p><figure id="2844aeba-6b33-4830-9c7a-090bb2a0f616" class="image"><a href="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%206.png"><img style="width:707.9947509765625px" src="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%206.png"/></a></figure><p id="90030d1a-c1b7-486f-b17c-00b0843a834b" class="">
+</p><p id="6e3029a8-e3d2-4f7e-b697-cdfc5b40b71c" class="">Head down the hill to Hotel Sulata, one of the luxury hotels, boasting palm trees and Mediterranean white stone style flourishes along the front.</p><p id="a2ab2954-2398-4c97-be6e-bc96f362b69d" class="">
+</p><figure id="cfce095a-b603-4b6f-bd91-ced2ee1e2c82" class="image"><a href="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%207.png"><img style="width:707.9947509765625px" src="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%207.png"/></a></figure><p id="b1fec982-90d5-4f99-810a-41285f373b5e" class="">
+</p><p id="7a797eab-7dbd-4d41-a219-eb20b4de06af" class="">Hotel Beat Wave is jazzed up with ‘elegant’ golden embellishments. The rooms inside include ‘kawaii’ cosplay and a coffee machine.</p><p id="09cf2c49-8f74-4cc0-b53a-e87e98f3fb4a" class="">
+</p><figure id="8574178d-0974-473b-b82b-a9bd88105824" class="image"><a href="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%208.png"><img style="width:708px" src="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%208.png"/></a></figure><p id="906acbdc-5532-434f-9bc5-5768985df9b0" class="">
+</p><p id="e5806726-1bc9-4583-bb2b-eebcdacc544d" class="">Even though the restrictions and regulations surrounding love hotels have forced many of them to take a back seat with the decorations, Shibuya Love Hotel Hill still has that illicit vibe. Strolling around — especially during nighttime —  is an interesting experience.</p><hr id="1045a4d0-0333-80bd-b23e-dfb8b5724adc"/><h2 id="1045a4d0-0333-8017-b18f-eb74e130b766" class="">Visiting a Love Hotel</h2><p id="1045a4d0-0333-80e6-b463-e1c424b32b92" class="">First, find a love hotel buddy. Maybe it’s your travel partner, your boyfriend/ girlfriend or the charming and attractive lady/ gentleman you just met at a club. Be warned that some love hotels won’t allow same-sex couples to stay, and some even refuse two foreigners. They can be discreet about this, so just be prepared to be refused entry.</p><p id="1045a4d0-0333-809d-b041-f1d6bf0bbffa" class="">Next, choose your love hotel. Head for Love Hotel Hill on the hill behind the Shibuya 109 building and wander the streets. Half the fun is choosing, and the further in you go, the cheaper the hotels get, so don’t be afraid to check out a few (unless you’re in a terrible hurry).</p><figure id="1045a4d0-0333-80d8-9061-f4b1cc7c5fb1" class="image"><a href="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%209.png"><img style="width:707.9947509765625px" src="Love%20Hotel%20Hill%202484da208e1042bb8b8c6902a1379ec1/image%209.png"/></a></figure><p id="4d1cc680-86c3-4090-ab1c-6808698f33a5" class="">Some of the options can be a little confusing, but essentially there are two choices: ‘rest’ and ‘stay’:</p><ul id="a7841764-03f3-46e1-aa7f-7377c698c55a" class="bulleted-list"><li style="list-style-type:disc">‘Rest’ means you can use the room for typically one to four hours, and can expect to pay upwards of ¥1,500 for an hour. Obviously, certain times and days are more expensive, like Friday and Saturday nights, and the nights before a holiday.</li></ul><ul id="1045a4d0-0333-80aa-a26b-ff567562ec46" class="bulleted-list"><li style="list-style-type:disc">‘Stay’ means you can stay there overnight. Usually you can check in between 8–11pm, and check out again between 11am and 1pm. You can get a room for as little as ¥6,500, but some of the really nice or extravagantly themed ones can go for as much as ¥20,000! Again, everything gets significantly more expensive on a Saturday night, so double-check the price.</li></ul><hr id="1045a4d0-0333-80dc-a727-f4540395e69b"/><h2 id="e66bebaa-6c8c-4837-a6d1-6d8613175b7f" class="">Choosing A Room</h2><p id="2441b527-35c2-4133-9e81-68792331efc8" class="">Most of the time the rooms are displayed on a screen near the door, and the available ones will be illuminated, so just press the button for the room you want, pay the person at the desk (who may have a screen in front of their face to give you privacy) and take your key.</p><p id="7273292e-4141-46a9-8bcd-b048295fb435" class="">So, having chosen your buddy and your room, you can head on inside and, um, play Scrabble. Or whatever.</p><p id="596907f1-6840-4780-8caf-17c537072e8e" class="">The rooms are always equipped with bathrooms with all the standard toiletries, and there is usually a TV, radio, mini fridge and coffee. If you’re really lucky you might score a karaoke machine. Some of the really fancy rooms have in-room Jacuzzis or massage chairs, and some offer extras like costume rental, but that’s only if you’re dropping a ton of money to impress your buddy.</p><p id="115ba060-e325-45dc-9d0b-31ff2099794b" class="">Despite their rather seedy reputation, they are usually clean, well soundproofed, and have very little natural light so you can get a good night’s sleep. Compare the price to a standard hotel and it’s actually a pretty decent alternative for a short stay.</p><p id="f52f7be5-f4f3-4f42-b3c1-e98c2640e670" class="">If you choose to stay the night, most hotels will give you a call half an hour before check-out time, giving you enough time to shower and dress before dropping the key at the front desk and walking out into the harsh, judgmental light of day.</p><hr id="1045a4d0-0333-805d-af45-f7668e1d00fd"/><h3 id="61f3108c-67b9-4432-8d61-e9838cb7e28f" class="">Getting There</h3><p id="1f3cf9de-eb0c-4f06-a23b-de08db225a55" class="">The cluster of love hotels in Shibuya, which earned its nickname Love Hotel Hills, is located in Dogenzaka — just a 3-minute walk from Shibuya Station! In fact, the way to Dogenzaka is one of the branches you’ll take as you cross Shibuya Crossing</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

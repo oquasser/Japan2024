@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Arashiyama Kimono Forest</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="111820a4-a24e-479d-bfd3-c0919482aef5" class="page sans"><header><h1 class="page-title">Arashiyama Kimono Forest</h1><p class="page-description"></p></header><div class="page-body"><hr id="1045a4d0-0333-80d5-8f4a-f8d7676e1132"/><p id="81a3ae09-dac5-44aa-89df-95d2016c2d8a" class="">Nestled in the western part of Kyoto, Arashiyama is a popular tourist destination known for its natural beauty, historic sites, and scenic attractions. While the iconic bamboo forest is undoubtedly the main draw for visitors, there is another lesser-known but equally impressive &quot;forest&quot; called the Kimono Forest. This stunning art installation, located around the Arashiyama Randen tram station, features hundreds of colorful pillars adorned with traditional kimono fabrics, creating a mesmerizing and enchanting atmosphere.</p><hr id="1045a4d0-0333-8030-87d6-c7857c1eca48"/><figure id="f56fc68f-dcd2-4853-9d4f-e8243c02eaf4" class="image"><a href="Arashiyama%20Kimono%20Forest%20111820a4a24e479dbfd3c0919482aef5/image.png"><img style="width:707.9947509765625px" src="Arashiyama%20Kimono%20Forest%20111820a4a24e479dbfd3c0919482aef5/image.png"/></a></figure><hr id="4b5c0e14-043b-4216-9d98-6fda978ae362"/><h3 id="de3fd9d8-62d2-4c09-b6a3-734f1d22c9c9" class="">What is the Kimono Forest?</h3><p id="7ee6fea7-b575-4d5e-94c3-704f472b72fe" class="">The Kimono Forest is a unique art installation composed of 600 clear acrylic cylinders, each standing 2 meters tall. These pillars are wrapped with vibrant kimono fabrics, showcasing a total of 32 different traditional Kyo-yuzen designs. Kyo-yuzen is a style of fabric dyeing that originated in Kyoto during the Edo Period, known for its intricate patterns and vivid colors. The installation was designed by renowned interior designer Yasumichi Morita, who carefully selected the fabric designs. The textiles were then produced by Kamedatomi, a long-established Kyoto fabric company.</p><p id="71d9c0b3-147a-44c8-aa96-54c86189dbed" class="">During the day, the Kimono Forest creates a striking visual of kimono sleeves clustered together, resembling a dense forest. However, the true magic happens at night when LED lights illuminate the pillars from within, transforming the station into a breathtaking and ethereal landscape. The elegant patterns seem to float in the darkness, creating a captivating and romantic atmosphere that is unique to Kyoto.</p><hr id="1045a4d0-0333-8096-9278-cd7d6d4f5e59"/><h3 id="fff5a4d0-0333-805f-a0aa-ca1324aae716" class="">Location and Access to the Kimono Forest</h3><p id="4c2b074f-eae6-492f-bb39-0c5859f907a2" class="">The Kimono Forest is located at the Arashiyama Randen tram station, the terminal station of the Keifuku Randen Tram Line. The station underwent renovations in 2013, which included the installation of the Kimono Forest. To get there, you can take the JR San-in Line from Kyoto Station or Nijo Station to Saga-Arashiyama Station, which takes about 12 minutes. From there, it&#x27;s a short walk to the Randen tram station. Alternatively, you can take the Keifuku Arashiyama Line directly from Shijo Omiya Station in central Kyoto. If coming from Osaka, the Hankyu Arashiyama Station is located south of the river; simply cross the Togetsukyo Bridge and turn left to reach the station.</p><hr id="1045a4d0-0333-80f1-9348-d0e9fe45421b"/><h3 id="28325004-d27b-481f-a194-741d02b92683" class="">Composition and Design of the Kimono Forest Installation</h3><p id="2b429594-aff6-4209-94ee-d62b8a1edc31" class="">The acrylic pillars of the Kimono Forest are arranged throughout the station and its grounds, creating an immersive experience for visitors. Some cylinders are placed inside the dimly lit station interior, while others extend onto the platforms. The majority of the pillars line the tracks on either side of the station, with the largest concentration located on the south side. Here, a winding path leads visitors through the illuminated forest, offering a delightful walk and countless photo opportunities.</p><p id="b93d0fbd-b7e1-41d8-9b55-4e45b567de30" class="">The kimono fabrics used in the installation showcase a wide range of patterns and motifs, from elegant floral designs to geometric shapes and traditional Japanese symbols. The rich colors, primarily in shades of red, pink, and purple, create a vibrant and eye-catching display that perfectly complements the station&#x27;s surroundings.</p><hr id="1045a4d0-0333-80ef-9755-dc7440bc4112"/><h3 id="5fc1b8a1-5d10-4b39-91ed-aa7f0a4c3c62" class="">The Store and Inspiration Behind the Kimono Forest</h3><p id="8f1d0e42-2249-4f40-8d0e-b02f2c929c03" class="">The idea for the Kimono Forest originated from the desire to transform Arashiyama Station into a nighttime attraction that would encourage visitors to explore the area even after dark. Hiroyuki Suzuki, who oversaw the station&#x27;s renovation, wanted to create a space that showcased the beauty and elegance of traditional Japanese textiles while providing a unique and memorable experience for travelers.</p><p id="4c098dcd-cd62-4176-b123-efa0778406c3" class="">By collaborating with designer Yasumichi Morita and the Kamedatomi fabric company, the Keifuku Electric Railroad brought the vision of the Kimono Forest to life. The installation not only adds a fresh and modern touch to the station but also pays homage to Kyoto&#x27;s rich textile history and cultural heritage. The Kimono Forest has become a beloved attraction, attracting visitors from all over the world who come to admire its beauty and immerse themselves in its enchanting atmosphere.</p><hr id="5453d43a-dcd3-4ec7-8a5c-2a663996b0a2"/><h3 id="fff5a4d0-0333-80bc-88ca-c0b95d866e7f" class="">The Dragon Pond and its Significance</h3><p id="98565cd0-f2af-4220-9b32-d6b5358f9fdb" class="">Within the Kimono Forest, visitors will find the Dragon Pond, also known as Ryu-no-atago. This small pool of water is filled with coins tossed in by visitors, similar to a wishing well. At the center of the pond is a polished black stone sphere engraved with a golden dragon. The dragon has long been considered a good omen in Japanese culture, and the station&#x27;s proximity to Tenryu-ji Temple, which means &quot;Heavenly Dragon Temple,&quot; further emphasizes its significance.</p><p id="21dfc0e0-bf61-447a-a3a5-a593325bafc3" class="">According to local belief, immersing one&#x27;s hands in the Dragon Pond&#x27;s water will fill one&#x27;s heart with peace and happiness. This small ritual adds a layer of spirituality and mindfulness to the Kimono Forest experience, encouraging visitors to pause and reflect amidst the beauty of their surroundings.</p><p id="9b8159da-90ff-4bd6-b02d-5b7665ad03ce" class="">
+</p><figure id="4bbdeca8-4e79-4a9d-b8e8-faec7b91f692" class="image"><a href="Arashiyama%20Kimono%20Forest%20111820a4a24e479dbfd3c0919482aef5/image%201.png"><img style="width:707.9947509765625px" src="Arashiyama%20Kimono%20Forest%20111820a4a24e479dbfd3c0919482aef5/image%201.png"/></a></figure><hr id="1045a4d0-0333-80dd-aca1-ca387f5454f4"/><h3 id="ac7c853d-3d27-4d86-a5a4-92e62ad51ae0" class="">Other Things to Do Nearby</h3><p id="2d455995-53ea-44f5-a3b7-3c53a23f0ad0" class="">The Arashiyama Randen station is more than just a transportation hub; it also offers a variety of small shops, cafes, and other amenities for visitors to enjoy. These establishments provide a perfect opportunity to take a break, grab a snack or souvenir, and relax after exploring the Kimono Forest and the surrounding area.</p><p id="a0c0100f-1044-4926-884b-d35f2a143356" class="">One notable feature is the free footbath (ashiyu) located on the central platform, where you can sit and soak your tired feet after a day of walking and sightseeing. This small gesture of hospitality is a testament to the station&#x27;s commitment to providing a welcoming and comfortable experience for all its visitors.</p><hr id="1045a4d0-0333-80b7-8c0b-e184c5437394"/><h3 id="3a5a1852-598c-4665-afe8-07f3aaf57147" class="">Best Time to Visit the Kimono Forest</h3><p id="df20168f-195a-4cdf-9d34-1f5e593400a5" class="">While the Kimono Forest is open 24 hours a day and is stunning at any time, the consensus is that the best time to visit is after sunset. As the sky darkens, the LED lights within the acrylic pillars illuminate the kimono fabrics, making the colors appear richer and more vibrant. This enchanting illumination creates a romantic and magical atmosphere that is perfect for an evening stroll or a memorable photo session.</p><p id="2f53c46a-da17-45a5-86b9-1e69ea491d6d" class="">Keep in mind that the illumination is turned off at 9 pm, so plan your visit accordingly. If you arrive during the day, you can still appreciate the beauty of the installation, but the true magic of the Kimono Forest reveals itself at night.</p><figure id="144ff091-018a-4eaf-9780-de726f33fe26" class="image"><a href="Arashiyama%20Kimono%20Forest%20111820a4a24e479dbfd3c0919482aef5/image%202.png"><img style="width:705px" src="Arashiyama%20Kimono%20Forest%20111820a4a24e479dbfd3c0919482aef5/image%202.png"/></a></figure><p id="1045a4d0-0333-8002-87bb-e90765a5de53" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

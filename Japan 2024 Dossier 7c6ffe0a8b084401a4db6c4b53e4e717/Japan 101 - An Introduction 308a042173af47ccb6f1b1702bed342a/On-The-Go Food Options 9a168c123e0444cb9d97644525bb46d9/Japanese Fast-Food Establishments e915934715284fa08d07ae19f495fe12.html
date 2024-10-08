@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Japanese Fast-Food Establishments</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e9159347-1528-4fa0-8d07-ae19f495fe12" class="page sans"><header><h1 class="page-title">Japanese Fast-Food Establishments</h1><p class="page-description"></p></header><div class="page-body"><p id="1025a4d0-0333-80ad-94b3-cbfbb24979ff" class="">Although Tokyo is known for the freshest seafood, Michelin-starred restaurants and an unbelievable dedication to the art of cooking, it also plays host to a huge number of very diverse fast-food joints. Burgers, gyudon (beef bowl), cheap sushi, Italian fare and tempura all play a vital role in keeping the good folk of Tokyo adequately fed and watered. In this rundown of Japanese fast-food chains, I have eschewed foreign-owned institutions including McDonald’s, Burger King and KFC in favor of Japanese-run companies.</p><hr id="1045a4d0-0333-80f0-a6ad-ca642493c6df"/><h1 id="1025a4d0-0333-8012-9a4f-f81658960203" class="">Burgers</h1><h2 id="1025a4d0-0333-8066-ae17-cf7dc7576dfc" class="">Mos Burger</h2><p id="1025a4d0-0333-80ff-a4a8-cca5bcb53ab8" class="">MOS Burger is a notable fast food chain in Japan known for its diverse range of toppings and sauces, setting it apart from other burger restaurants. With over 20 sauce options, ranging from traditional to exotic, MOS Burger offers customers the opportunity to customize their burgers according to their preferences. This emphasis on customization, along with its commitment to using high-quality ingredients, has made MOS Burger a popular choice for burger enthusiasts across Japan.</p><h2 id="1025a4d0-0333-80dd-9229-c3d57d10f483" class="">Freshness Burger</h2><p id="1025a4d0-0333-8049-b6c0-e201aac2027e" class="">Freshness Burger stands out as a beloved destination among fast food chains in Japan, renowned for its delectable burgers and diverse menu offerings. This popular restaurant caters to a wide range of tastes, with an array of burger specials designed to appeal to discerning palates.<br/>What sets Freshness Burger apart is its commitment to freshness and quality, evident in every bite of their mouthwatering creations. In addition to classic burger options, Freshness Burger also offers enticing choices for vegetarians and those seeking lighter fare. One notable feature of Freshness Burger’s menu is the availability of burgers in both small and large sizes, catering to varying appetites and preferences. This versatility ensures that patrons can enjoy their favorite burgers in a portion size that suits their needs. With its dedication to quality ingredients and flavorful offerings, Freshness Burger continues to capture the hearts and taste buds of customers across Japan. Whether you’re craving a classic beef burger or exploring vegetarian options, Freshness Burger promises a delightful dining experience that satisfies every craving.<br/></p><h2 id="1025a4d0-0333-80b1-be81-c7b3e5b7b37e" class="">Lotteria</h2><p id="1025a4d0-0333-8087-a2cf-f2a567fc4797" class="">Lotteria is a fast food restaurant that first opened its doors in Tokyo in 1972. Since then, the franchise has expanded across Japan and into many other countries throughout Asia. The restaurant bears a strong resemblance to American-style burger chains, offering a wide range of hamburgers, chicken dishes, and more. However, to cater to Japanese palates, Lotteria has introduced unique twists to many of its menu items. Notably, they are famous for their shrimp burger and often feature specialty items like buns made from rice patties or noodles, adding a distinct Japanese flair to the fast food experience.</p><h2 id="0016fd7e-e83e-4eb4-b02c-e2220887d7d3" class="">Dom Dom Hamburger</h2><p id="1025a4d0-0333-80ca-b0ee-c2e916acb6cf" class="">Said to be Japan’s first ever hamburger chain, opening its doors in 1970, there, sadly, aren’t many Dom Dom hamburger’s left anymore. However, there are some alive and kicking mostly in and around the peripheries of Tokyo. In addition to the usual burgers, Dom Dom also likes to spice up the menu with items like the Maitake Mushroom Burger and Ebimayo burger (shrimp and mayo). </p><h2 id="0dd6a3c7-ab70-466b-9d0b-f55aa68b3721" class="">First Kitchen</h2><p id="bdc64ff2-c60b-4f7f-a71e-dd42f1c30f1c" class="">First Kitchen is a renowned fast food chain in Japan, offering a diverse menu of American-inspired dishes, including burgers, fries, pasta, pizza, and fried chicken. With its fusion of American flavors and Japanese culinary preferences, First Kitchen has carved out a unique niche in the fast food market. Additionally, some First Kitchen locations are combined with the popular American fast food chain Wendy’s, providing customers with even more options to choose from. Whether you’re craving a classic burger or something more adventurous, First Kitchen has something for everyone to enjoy.</p><hr id="1045a4d0-0333-8036-87da-e8c4adeba70b"/><h1 id="1025a4d0-0333-80ce-bc99-f0a679a5ee11" class="">Gyudon</h1><h2 id="1025a4d0-0333-8061-abfe-ce49c5e04085" class="">Sukiya</h2><p id="2fa9a7a0-508e-484a-b7b5-8bee47195ec9" class="">Sukiya is a nationwide chain of gyudon restaurants, and boasts the largest number of gyudon chain restaurants in Japan. Sukiya’s standard gyudon is known for its deliciousness and reasonable price and offers different sizes of gyudon, ranging from mini size to extra large. This system is quite popular since you can choose your favorite size.</p><h2 id="1025a4d0-0333-8075-98a8-e475758a51dc" class="">Yoshinoya</h2><p id="1025a4d0-0333-801b-8f36-f04afc41705c" class="">Yoshinoya holds a prestigious title in the realm of fast food chains in Japan, renowned for its signature dish, Gyūdon (beef bowl). As the world’s oldest fast-food restaurant, Yoshinoya boasts a rich history dating back to its inception in 1899. With over a century of culinary expertise, Yoshinoya continues to captivate diners with its delectable offerings and unwavering commitment to quality. At Yoshinoya, patrons can indulge in a diverse array of options, ranging from classic beef bowls to tantalizing pork, vegetable, and tofu variations. Each dish is meticulously prepared to perfection, ensuring a harmonious blend of flavors and textures that tantalize the taste buds. With its longstanding legacy and dedication to excellence, Yoshinoya has earned its place as a beloved fixture in Japan’s fast-food landscape. Whether you’re craving a hearty beef bowl or seeking a satisfying vegetarian option, Yoshinoya promises an unforgettable dining experience that celebrates tradition and innovation.</p><h2 id="1025a4d0-0333-8068-a35f-d695324fc909" class="">Matsuya</h2><p id="2d11b05d-f397-4341-9e0c-9124b3241193" class="">When it comes to fast-food chains in Japan, Matsuya emerges as a prominent rival to Yoshinoya, boasting a wide array of offerings, including its signature beef bowls. As the largest fast-food restaurant chain in Japan, Matsuya has carved out a formidable presence in the culinary landscape. Matsuya’s menu extends beyond its renowned beef bowls to encompass a diverse selection of dishes, ensuring there’s something to satisfy every palate. In addition to the classic beef bowls, patrons can indulge in the aromatic flavors of Matsuya’s tantalizing curry bowls, providing a delicious alternative to its flagship item. With its widespread popularity and commitment to quality, Matsuya continues to attract diners seeking convenient and satisfying dining options. Whether you’re craving the savory goodness of a beef bowl or eager to explore the enticing flavors of Japanese curry, Matsuya delivers a culinary experience that delights taste buds. Experience the culinary excellence of Matsuya by visiting one of its many locations throughout Japan. From its hearty beef bowls to its flavorful curry offerings, Matsuya invites diners to savor the rich and diverse flavors of Japanese fast food.</p><hr id="1045a4d0-0333-8050-94a4-ed8e235b2646"/><h1 id="1025a4d0-0333-80a1-9144-e1336c2a115f" class="">Soba and Udon</h1><h2 id="1025a4d0-0333-8025-8a9e-d71b6fcd1865" class="">Fuji Soba</h2><p id="1025a4d0-0333-8055-a0a9-de9ba948df64" class="">Fuji Soba is a soba chain restaurant located in many train stations in Japan. It’s a standing restaurant, but many of them have seats so that you don’t necessarily have to eat standing up. Therefore, the turnover rate is quite high so it is perfect for business people who are always busy and don’t have much time for a meal. The standard menu only costs around 300 yen!</p><h2 id="b0dc35ce-7c7a-40df-90b1-b0f1d242fb16" class="">Hanmaru Udon</h2><p id="1025a4d0-0333-8024-8a3e-dbaebadc02da" class="">Hanamaru Udon is a udon chain that has developed its flavor from Kagawa Hanamaru Udon, which started in Kagawa Prefecture. It is well-known as “the Kingdom of Udon”. The self-service style helps keep the prices low. In spite of the low price, they continue to pursue the quality of the authentic taste by carefully selecting the ingredients and making the noodle dough kneading process authentic.</p><h2 id="1025a4d0-0333-80f0-a236-da338806a6e1" class="">Marugame Seimen</h2><p id="1025a4d0-0333-8025-8d2c-f50ebea87573" class="">Like Hanamaru Udon, Marugame Seimen is a nationwide udon chain offering delicious udon in a self-service system. The most important thing about Marugame Seimen is that their noodles are carefully made in the store. Therefore, you can enjoy fresh udon at any time. “Kama-age Udon”, one of Marugame Seimen’s signatures, is a hot udon in a wooden vat (a normal size) for 290 yen. Tempura is recommended as the optional topping.</p><hr id="1f04c4ff-66ec-47ad-88d0-6be5704b187a"/><h1 id="1025a4d0-0333-8014-879d-e0f2fa0ccaff" class="">Donburi</h1><h2 id="9ec8cf20-36dd-44eb-98c8-d6e625c284cf" class="">Tenya</h2><p id="1025a4d0-0333-800f-9b5e-c8747d584c81" class="">A bowl of tempura served on hot rice is called “tendon”. It often costs over 1,500 yen if you eat at specialty restaurants. However, at Tenya, one of Japan’s best tendon chain restaurants, you can easily enjoy tendon for around 500 yen. Of course, you can also get it to-go. Enjoy the harmony of crispy battered tempura and hot rice!</p><h2 id="1025a4d0-0333-809f-beed-e1847e84802f" class="">Nakau</h2><p id="4dd7c1c1-bf35-49a5-8ddd-10d090a3b71b" class="">One of the most popular donburi chain restaurants in Japan is Nakau, which continues to offer a wide variety of donburi. Nakau’s most popular menu item is oyako-don, a rice bowl meal topped with cooked chicken and egg (oyako means a parent and child in Japanese). Nakau is not limited to oyakodon, but continues to produce a variety of other products such as Katsu-don (a cutlet rice bowl), Curry, and Kaisen-don (sushi bowl).</p><hr id="df31a14f-c2c3-447d-8837-c29be4c88b0a"/><h1 id="1025a4d0-0333-804e-b96d-eb4e745a6d05" class="">Curry</h1><h2 id="1025a4d0-0333-80db-93fd-f57ea71d1cea" class="">CoCo Ichibanya</h2><p id="1025a4d0-0333-8015-b5da-ffcb53cdd364" class="">CoCo Ichibanya is a renowned fast food chain in Japan, celebrated for its delectable curry rice dishes. With a vast array of nearly 40 curry varieties to choose from, including options for vegetarians and those with varying spice preferences, CoCo Ichibanya offers a customizable dining experience like no other. Customers can tailor their meal by adjusting the rice-to-curry ratio and selecting their preferred spice level, ensuring a personalized and satisfying culinary adventure. As one of the most popular fast food chains in Japan, CoCo Ichibanya continues to delight curry enthusiasts with its flavorful offerings and commitment to quality.</p><h2 id="1025a4d0-0333-800b-9bc4-e53a138fac07" class="">Go Go Curry</h2><p id="1025a4d0-0333-8002-a532-ec7a45171569" class="">Go Go Curry is a curry chain restaurant that operates mainly in Ishikawa Prefecture and Tokyo. The gorilla logo on the exterior and interior really grabs peoples attention. The curry and rice served by Go Go Curry is called Kanazawa Curry and its roux is quite dark, thick, and rich in flavor. Their signature dish, loin cutlet curry is curry and rice with a big loin cutlet and is filling and delicious.</p><hr id="7df4b1bc-0254-4a1b-b56a-0bf5191d28ee"/><h1 id="1025a4d0-0333-80d3-a903-cc549d8b0f23" class="">Sushi and More</h1><h2 id="1025a4d0-0333-805b-81b0-c6cc56367244" class="">Kura Sushi</h2><p id="1025a4d0-0333-8053-9211-f9eb5e3e4657" class="">Recently, the popularity of Kura-sushi has taken Japan by storm. Kura-sushi is committed to the policy of providing safe, delicious sushi, and does not use major additives such as chemical seasoning, artificial sweetener, synthetic color or artificial preservatives whatsoever in their 200 seasonings they use in their restaurants, from sushi ingredients to soy sauce. One of the most unique features of Kura-sushi is the gachapon game to win toys while you eat! Put five plates in a slot after finishing them and you get a chance to play a game. If you win the game (it depends on your luck), a small toy will come out! The take-out system is also very popular, and you can make a reservation by using your smartphone and then simply pick it up at your local Kura-sushi restaurant. If you want to have a sushi party at home, then Kura-sushi is your best choice!</p><h2 id="1025a4d0-0333-80c5-bca5-de02816e62d0" class="">Sushiro</h2><p id="1025a4d0-0333-8058-bee1-cc3448b20dc7" class="">If you want to eat good sushi at a reasonable price, Sushiro is the perfect place to go. Most of the sushi on the menu is less than 150 yen. Sushi items such as tuna, salmon, and shrimp are available for around 100 yen per plate and they are amazingly delicious. Side dishes such as ramen, karaage and desert are also popular. Sushiro is a conveyor belt restaurant, but also launched takeout-only shops throughout Japan.</p><h2 id="1025a4d0-0333-80b1-a3be-c637fd670a65" class="">Saizeriya</h2><p id="1025a4d0-0333-8044-90cd-f64fe1c23350" class="">Saizeriya is a very popular chain of family restaurants in Japan. They offer decent Italian food at reasonable prices. Every menu item is inexpensive with pizzas ranging from 400 to 500 yen and pasta from 400 to 700 yen. Therefore, it’s quite popular not only among families but also among students and young people. </p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
